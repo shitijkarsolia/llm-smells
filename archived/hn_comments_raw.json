@@ -1,0 +1,1724 @@
+[
+  {
+    "id": 48315309,
+    "by": "Planktonne",
+    "text": "> The LLM generated writing obviously felt significantly better than my own writing.\n\nA general pattern for LLMs is that they look really good at things you are bad at. What that means is that if you find yourself thinking of its output as significantly better than yours in a particular domain, there's a high chance that you are not equipped to judge that quality effectively.",
+    "depth": 0
+  },
+  {
+    "id": 48316201,
+    "by": "ryandrake",
+    "text": "> A general pattern for LLMs is that they look really good at things you are bad at.\n\nThis is true for coding, too, which I think, to a large degree, might explain the polarized differences in opinions on HN about the quality of LLM-produced code. You have the 1. \"AI produces code better than I could possibly write, one shots things it would take me days to do, and has made me 10X more productive!\" camp, and you have the 2. \"AI constantly produces poor code needing rework, makes mistakes, has to be babysat, and ultimately costs me time!\" camp, with a spectrum in between those. How could the output of the same product be seen so differently? Well, I have bad news for camp 1...",
+    "depth": 1
+  },
+  {
+    "id": 48316707,
+    "by": "OhSoHumble",
+    "text": "I've caught Claude Code generating some pretty egregious security vulnerabilities. I'm using it to build an AI RPG site and the goal is to use web assembly as a bridge between author submitted code and LLMs in order to help shore up state management at the game level.\n\nThe language that I picked for the game runtime is Python. Claude really thought that the best way to validate user submitted Python was to bypass the WASM sandbox and execute it within the application container using shell exec - essentially opening up an RCE vulnerability.\n\nI also find that the quality of Claude Code degrades substantially. Claude really wants to implement every feature in as bespoke way as possible. This is fine when you first generate the project but over time you'll find that every web modal is implemented differently. Every button is different. Business logic is disconnected. It's why agentically produced codebases are MUCH larger than they should be; every feature is developed in a vacuum.\n\nThen I'm trying to shove stuff in my AGENTS.md or CLAUDE.md files like \"ALWAYS look for existing patterns within the codebase to keep it consistent.\" But the harness doesn't always work and it'll generate useless, verbose code anyways.\n\nIn some cases it's useful - like if I am shaky on the DSA knowledge needed for a specific operation or optimization then Claude can replace Stackoverflow. But, man, I'm so frustrated with it.",
+    "depth": 2
+  },
+  {
+    "id": 48330735,
+    "by": "ValentineC",
+    "text": "> Business logic is disconnected. It's why agentically produced codebases are MUCH larger than they should be; every feature is developed in a vacuum.\n\nI just had Opus 4.7 build a feature twice, because it didn't close a ticket the first time. (I'm trying to solo-build a fairly large greenfield project, and am at the point where I let it go ham over my codebase because of the scale of things.)\n\nI then spent a couple of hours asking it to compare the features. It argued that they were completely different features for a while, then eventually acquiesced and said that they were redundant.\n\nThat's a couple of thousands of tokens and time I'm never going to get back.",
+    "depth": 3
+  },
+  {
+    "id": 48327556,
+    "by": "fho",
+    "text": "> I'm using it to build an AI RPG site\n\nI am trying something similar: basically a LLM managed MUD for people with too little time for roleplaying.\n\nIf you want to chat, hit me up at mail-from-ohsohumble@f12n.de",
+    "depth": 3
+  },
+  {
+    "id": 48316286,
+    "by": "kybernetikos",
+    "text": "I think there are some factors beyond just skill too - the kinds of tasks you're giving the AI, and how involved you are in ensuring the output is good (via either extensive planning guidance, extensive review/testing, or a combination).",
+    "depth": 2
+  },
+  {
+    "id": 48328480,
+    "by": "thegrim33",
+    "text": "I came up with an analogy the other day -\n\nThe 'camp 1' people in the pre-LLM days were probably the ones that often just copy+pasted code from SO they didn't really understand, but since the code seemed to work when they ran it, they thought it was all fine and continued on.\n\nWhereas the 'camp 2' people when trying to find an answer to something, discarded 99% of SO and other similar answers, having the knowledge to see how they had broken edge cases, were limited in some way, didn't actually solve the underlying problem, etc.\n\nNowadays, 'camp 1' people just use the LLM output and it \"seems to work\" and consider it all fine. Whereas the 'camp 2' people still continuously see all the faults with it.",
+    "depth": 2
+  },
+  {
+    "id": 48331159,
+    "by": "galangalalgol",
+    "text": "Being faster than humans at mundane and verifiable tasks is a useful thing. Great for format conversions. Api mappings etc. if you don't understand the algorithm you are asking it to implement, you better at least understand how to generate a large set of correct input and output pairs yourself, because it will absolutely make stuff up and adjust the test cases to pass.",
+    "depth": 3
+  },
+  {
+    "id": 48316525,
+    "by": "kiba",
+    "text": "I used LLM to teach me how to code and get through obstacles that would have me spending a lot of time doing ???. Typically, I just write code that I know a lot of time is absolutely wrong but the LLM helpfully point out mistakes.\n\nI am slowly doing more of my own code and cutting out the LLM out of the loop in the unfamiliar territory I am working in.\n\nMy main concern is not so much productivity but understanding the code I have written and feeling agency over it.\n\nThe LLM is a very good teacher.",
+    "depth": 2
+  },
+  {
+    "id": 48316445,
+    "by": "onion2k",
+    "text": "Well, I have bad news for camp 1..\n\nIt's bad if they work in a part of the industry where code quality or efficiency matters. That's maybe 10% of the total though.",
+    "depth": 2
+  },
+  {
+    "id": 48318349,
+    "by": "overgard",
+    "text": "I think it matters everywhere -- just because some fields get away with making trash doesn't mean that they're not vulnerable to people taking their lunch by making something distinctly-not-trash. People put up with a lot when there's lock-in, but there's a breaking point. (I say now using a linux desktop about 90% of the time now because windows has become such a fucking disaster)",
+    "depth": 3
+  },
+  {
+    "id": 48318430,
+    "by": "LoganDark",
+    "text": "Being vulnerable makes money unfortunately. And making money now has always been seen as more important than being sustainable in the long-term. Even if an exploit later takes away every cent of earnings.",
+    "depth": 4
+  },
+  {
+    "id": 48319219,
+    "by": "geraneum",
+    "text": "I see this sentiment occasionally brought up, and at the same time see what\u2019s happening to Github where the majority of their distributions is not security or efficiency related (not saying it\u2019s because of LLMs, we don\u2019t know). The point is, these things matter beyond beautiful code. You loose trust and you lose customers and money.",
+    "depth": 3
+  },
+  {
+    "id": 48316520,
+    "by": "pydry",
+    "text": "Companies that don't care about code quality always care about the side effects of poor code quality. They just can't connect the dots.",
+    "depth": 3
+  },
+  {
+    "id": 48319673,
+    "by": "otabdeveloper4",
+    "text": "Are you seriously implying that technical debt is something that doesn't exist or something that managers don't care about??",
+    "depth": 3
+  },
+  {
+    "id": 48318248,
+    "by": "overgard",
+    "text": "Yup, pretty much.\n\nThe hard part too is it's not like you can just learn the basics and be able to tell good code apart from bad -- the more you learn to code, the more intricate your understanding of good code is. It's like becoming a good writer; just knowing grammar and spelling doesn't make your writing interesting. Not to mention that there's just a lot of bad advice out there that you can't recognize as bad advice if you're not a regular practitioner. Like, \"Clean Code\" is IMO a terrible book, but a ton of people follow it because it has the sheen of respectability.. until, hopefully, they learn some new patterns and realize those old ones aren't very good. But you pick these things up with experience and doing the work! Otherwise if you're just reading other peoples opinions, you'll see a bunch of people say \"Clean Code is great\" and a bunch of other people say it's rubbish, and you'll have no way to know who you should listen to. (If you disagree with me on Clean Code the book that's fine -- I'm just using it to make a point -- sub in a different book/ideology if it suits you)\n\nI think looking at an LLM code and thinking you're now a coder is like watching a someone play guitar and think you can just pick up a guitar and play a song. The truth is, if you want to be good, you have to do the work.\n\nOne of the things I hate about AI is that we're going to have a generation of \"programmers\" that are absolutely shit at programming, create problems for everyone else, and will have absolutely no idea how bad they are. And they'll probably never get better, because you can't get better by just asking claude to do shit for you. And then the LLMs themselves will probably start to degrade because they'll be trained on the slop since it'll heavily outnumber handwritten code..",
+    "depth": 2
+  },
+  {
+    "id": 48318954,
+    "by": "yuye",
+    "text": ">I think looking at an LLM code and thinking you're now a coder is like watching a someone play guitar and think you can just pick up a guitar and play a song. The truth is, if you want to be good, you have to do the work.\n\nSo many posts here on HN claiming they created another useful tool with AI.\n\nNo, you didn't create it. AI did. You only had a supporting role. You're Ringo Starr and the AI is John Lennon.",
+    "depth": 3
+  },
+  {
+    "id": 48321500,
+    "by": "ninjalanternshk",
+    "text": "> No, you didn't create it. AI did.\n\nNo, AI assembled bits of code written by hundreds of programmers before you.",
+    "depth": 4
+  },
+  {
+    "id": 48319960,
+    "by": "palmotea",
+    "text": "> No, you didn't create it. AI did. You only had a supporting role. You're Ringo Starr and the AI is John Lennon.\n\nIt's even worse than that: you're the Ringo Starr and the AI is a a \"John Lennon\" who sucks and is boring and uncreative.",
+    "depth": 4
+  },
+  {
+    "id": 48319378,
+    "by": "YZF",
+    "text": "I disagree this is the source of the polarization. Maybe it's part of it.\n\nI have been coding since about 1983 or so. I shipped high quality products that have been used by millions of people. From embedded software to desktop applications to distributed systems.\n\nI don't think I'm in the \"don't understand what code should look like camp\" (I mean you never know but the evidence seems to show that I do know what I'm doing). I use AI as a tool and it helps me be more productive. I don't \"one shot things that would take me days to do\". I use it to help me automate things that I could do manually where it is faster and more effective. I review every step and if I don't like something I adjust. There are some specific situations where it basically does as good a job as I would do in running some experiments, doing some analysis or writing some small amount of code. I still know what the changes need to look like broadly, where to make them, and what patterns to follow. It just automates the work and sometimes does have some additional insight that can complement my views. Unlike me it is all knowing about everything in terms of access to \"knowledge\". It knows all the details of how a certain runtime manages memory, Linux internals and various open source software. I could go look it up myself (which I'd do before AI) but I don't hold it all in my head like AI basically does. It is also \"all knowing\" in the code base I work in (more so than me, it's a huge code base, I have an outline and a high level picture in my head but not every single code line) where again I can dive into the code but it helps me extract the relevant information faster.\n\nI think the polarization is more on the how you use the tool, what situations you use the tool for, which domain are you operating in (languages, applications etc.). You can also one-shot simple tools and helpers that are not the production software which is another way to accelerate your workflow.",
+    "depth": 2
+  },
+  {
+    "id": 48319449,
+    "by": "ruszki",
+    "text": "I\u2019ve seen people coding for 4 decades, thinking the same as you about themselves, and were bad coders. Unfortunately, nobody can tell you whether you\u2019re good or bad without seeing your code. Your claims means nothing on the internet.",
+    "depth": 3
+  },
+  {
+    "id": 48320766,
+    "by": "lukan",
+    "text": "What about the buisness side of things that does not care for shiny code, but shipping things to make money?\n\nThat simple arcade game (without in game transactions) needs to be fun, that website that needs to attract visitors (but not sell them anything or handle sensitive data)?\n\nThey don't care about abstract code quality, they care if it works and useful.\n\nSo a good coder here means he or she could get to working results according to what the client wants fast. And those things likely make up the vast majority of written code. So no wonder AI gets adopted as it is a powerful tool here to be even faster.\n\nNot all code runs in airplanes, handles financial transaction or sensitive user data - for this you need the best code possible and nothing vibe coded or quick and dirty hacks.\n\nAnd oh wonder, it is possible to combine both. Because yes, websites often include financial transactions nowdays, but that part can and should be handled with care. People who move slow and check things. And then those who are quick to build things on top of it.\n\nBut I strongly object to dividing programmers absolutely in good and bad programmers, when the field is so big and the requirements not the same.\n\nSome optimize in speed, some in quality. And yes, some are just bad in both. And some can do both - but they are very rare, in my experience.",
+    "depth": 4
+  },
+  {
+    "id": 48329077,
+    "by": "ruszki",
+    "text": "> And some can do both - but they are very rare, in my experience.\n\nAs far as I know basically all of the successful software companies had these quite early. Of course, you need other kinds of people too. And not everybody needs to be like that. But you absolutely need those kind of people.\n\nBut if you give me a few examples where this was not the case, and not recently, or during the dot com boom, where hype overwrote everything, then I\u2019ll change my mind.",
+    "depth": 5
+  },
+  {
+    "id": 48332463,
+    "by": "YZF",
+    "text": "I'm just trying to provide useful context. I can claim anything and you don't know me either way. Last I checked other than your peers (which you can imagine I've had) there is no subjective \"stamp\" for good vs. bad. Many people who have shipped nothing and have no experience think they're great coders as well.",
+    "depth": 4
+  },
+  {
+    "id": 48322406,
+    "by": "ted_bunny",
+    "text": "That's why they mentioned that their software was successful, it wasn't intended as idle bragging.",
+    "depth": 4
+  },
+  {
+    "id": 48329171,
+    "by": "ruszki",
+    "text": "That can still easily mean that they didn\u2019t give any value or minuscule amount of value to the project which caused their success.\n\nThe most successful projects which I\u2019ve seen closely, all of them had only a few people who mattered, everybody else could be replaced at any given time basically, without a real impact. All of the failing ones were those in which those people didn\u2019t exist, or were too few of them. This is exponentially more important in early phases of projects.",
+    "depth": 5
+  },
+  {
+    "id": 48332488,
+    "by": "YZF",
+    "text": "fwiw I wrote key features/pieces of pretty much everything I worked on. I was more or less the technical lead (and later engineering manager) on all the software I shipped.\n\nIt seems people really want to not believe AI can be useful for strong developers. That's fine. I don't really have a bone in this game, I'm anonymous here, and people can think whatever they choose to ;)",
+    "depth": 6
+  },
+  {
+    "id": 48332755,
+    "by": "ruszki",
+    "text": "Anonymity is a two way thing. Maybe, I don't need to use \"more or less\". Maybe, I'm an ultra heavy user of AI. It's even possible that I'm magnitudes better developer in every single aspects.\n\nMaybe not.\n\nI'm just waiting for somebody who send me code, which was generated by AI, not overwritten almost completely, and it's not shit. The funny thing is that some people here were so convinced that AI is great, that they recorded how they work with AI. And two things:\n\n- They were slower than manual copy pasting\n\n- They still somehow introduced bugs, and very suboptimal solutions...\n\nAlso, it would be good, that anybody could show me anything, that shows, how people became not terrible with code review suddenly. Because before AI, it was a common knowledge, that almost everybody was bad with it, and people rarely did it properly, because it was considered annoying, and not because they were useless. There were jokes about rewriting things, exactly because of the same reasons, and they heavily based on reality. And suddenly, we pretend that this changed.\n\nAnd somehow you should really would need to convince me that the 100s of thousands of lines of code which I generated with AI in the past years, somehow, it's better than what it is. But I'm sure, that it's easier to assume that I didn't try something, than showing only once what \"good\" means in this case. Unfortunately, there is nothing similar here, than for example \"Groovy is a great programming language\", which is a dead giveaway that whoever said that is not just bad developer, but somebody who I would fire immediately from every single project to which I'm related to. Especially if they are tech lead. But there are such people, and some of them would claim the same thing as you. // Obviously interns and juniors can think whatever they want. They are labeled as such, because they cannot know yet.",
+    "depth": 7
+  },
+  {
+    "id": 48332947,
+    "by": "YZF",
+    "text": "What I do at work is (obviously) not something I can share.\n\nGroovy ;) You must love Jenkins. At least I can rest at ease you won't fire me for that infraction. I used C and C++ most of my career and more recently Go (which I really loved when it was created but my take is a bit more nuanced these days after seeing a really large code base evolve over years).\n\nI'm confused though. You generated 100s of thousands of lines of code using AI and you think it's crap? The code AI generates for me is not some pinnacle of software engineering. It is repeating existing patterns or fairly simple concepts. I treat AI like an quick intern that scales infinitely (or a junior developer). And yes, juniors and interns don't write the best code but in many organizations there is still a fair amount of code written by them.\n\nThe thing is that in a large team/project (and the one I'm on has hundreds of developers of various skill levels) there's an endless backlog of things that can be improved including relatively easy features or refactoring. The constraints are either organizational or time. AI enables these things to get done with very little overhead so that's a net positive. It moves the needle for how much time/effort does it take to address \"not that hard\" issues and with proper prompting and examples it does a decent job. The bar isn't code that John Carmack would write in a week, the bar is improving a certain crappy area of the code to be more reliable or more performant or a little bit cleaner. This is life for most software projects. Yes, in a perfect world every software project is perfection. And maybe some organizations are able to approximate that.",
+    "depth": 8
+  },
+  {
+    "id": 48339741,
+    "by": "ruszki",
+    "text": "> I really loved when it was created but my take is a bit more nuanced these days after seeing a really large code base evolve over years\n\nAt least, I can be sure that we are not near the same level. But at least, you hopefully will recognize the same thing with new languages\u2026 without seeing them failing first.\n\n> You generated 100s of thousands of lines of code using AI and you think it's crap?\n\nThis is a funny question. First of all, there are people whose job is to test LLMs. However, I\u2019m not one of them. I simply tried them, generated, and still generate a ton of code with them, then I rewrite basically every single line of them. Because they use for example outdated patterns, which causes the same problems what you\u2019ve seen with Go.\n\n> It is repeating existing patterns or fairly simple concepts.\n\nYes, and most of the most popular ones are mediocre the best. Average code from which LLMs are learning are made by beginners, not experienced ones, because their sheer number. So LLMs will use those.\n\n> I treat AI like an quick intern\n\nThis is always the funniest sentence regarding this. Before AI, it was quite well known that you don\u2019t ever allow interns near important parts of the code. Now, people who supposed to know this, and the reasons for this, somehow forgot this aspect also, just like the review thing.\n\n> AI enables these things to get done with very little overhead so that's a net positive.\n\nNo, it does allow to tick a ticket in Jira. And if you handle this in any other way, then you will fail miserably, as how for example Microsoft quite openly did with this.\n\n> a little bit cleaner\n\nAh yes, the infamous \u201ccleaner\u201d, about which the exact opposite is quite well known, and it\u2019s quite obviously not true with every single vibe coded projects, without exceptions. If that\u2019s cleaner in any environment, then I have a bad news: you\u2019ve never worked with even medior developers, ever. Seriously, that code quality, especially architecturally, is junior level shit.\n\nMy previous boss did these low hanging fruits, he at least would never tell anything more than \u201cit\u2019s better than nothing\u201d. And only regarding non-important code, which can fail without real consequences. And can be shit, obviously. The whole point was that even shit is better than nothing. Not that it\u2019s acceptable quality in any way.\n\nAt least, you were obvious at least, that your \u201csuccess\u201d is magnitudes different, than mine. And not regarding code quality, but when a project/product successful. I completely forgot that I\u2019ve met people who sold that their teams completed the most tickets at a company in a given time frame as success. Probably we are closer than this, but still very far away.",
+    "depth": 9
+  },
+  {
+    "id": 48319311,
+    "by": "wzdd",
+    "text": "It really depends. If you're cranking out prototypes or testing ideas, it's genuinely great. But if you're familiar with the code it's very easy to spot its (many) mistakes. It's Gell-Mann amnesia.\n\nThen again, I just caught Claude writing setTransparent(!opaque == false), opaque being a bool, on a purely vibecoded project. Which was pretty impressive. (\"\u2022 You're right, that's nonsense.\")",
+    "depth": 2
+  },
+  {
+    "id": 48321316,
+    "by": "sebastianmestre",
+    "text": "Is this really a split that exists?\n\nIn my case I see Claude produce code much worse than I would, but it's certainly much quicker and, even after reworking, it makes me finish tasks in less time.",
+    "depth": 2
+  },
+  {
+    "id": 48319331,
+    "by": "koonsolo",
+    "text": "I'm in camp 3, where sometimes I don't really care how good or bad the code is. For internal tools for example, you can let the LLM crunch out code really fast, you can validate output but don't even have to look at the code. These kind of \"weekend projects\" can get finished in an hour or two, and so are really 10x.\n\nFor bigger production ready code, you indeed have to guard the architecture. But for the code, in some corners you can get away with sloppy code, as long as it kind of works.\n\nWhat I'm saying is, code doesn't always has to be great. You will just have to judge the places where it needs to be high quality, and other places where you can get away with sloppy code.",
+    "depth": 2
+  },
+  {
+    "id": 48320895,
+    "by": "zero_bias",
+    "text": "That judgment is an essential skill of an experienced programmer, and it is required at every level of the big picture, from high level architecture decisions to the development of particular features: what should I polish and what needs to be developed fast? How exactly should I cut corners in the safest way?\n\nSo there are still only two camps",
+    "depth": 3
+  },
+  {
+    "id": 48316373,
+    "by": "tempest_",
+    "text": "It isnt though.\n\nThe industry largely has selected for camp 1 long ago.\n\nIf you don't get immediate negative feedback camp 1 can go quite a ways before problems surface.",
+    "depth": 2
+  },
+  {
+    "id": 48316872,
+    "by": "bitwize",
+    "text": "Camp 1 is winning because we did it. We built an artificial brain. Frontier models can think, reason, and produce code better than the average human programmer. (You have not met many actual programmers slaving away on enterprise code bases if you do not understand that this is the case; the self-selecting HN crowd does not represent the profession as a whole by a long shot.) It's just a matter of, how committed are you (is your organization) to really learning and leveraging the tools?",
+    "depth": 3
+  },
+  {
+    "id": 48317582,
+    "by": "soulofmischief",
+    "text": "LLMs can generate code, but the quality of the code at scale is just not there currently by all important metrics such as security, maintainability, separation of concerns, etc.\n\nToday, it's a kind of chaos magic wherein you summon the beast and try your best to contain him, knowing that someone will probably die in the process. Sometimes literally. It's still a force multiplier in the right hands and domain, and agentic coding is a paradigm that won't retract, at least until something better supplants it.\n\nThe problem is that few engineers actually have the discipline available to constrain these models appropriately and instead rely on a hodgepodge network of \"skills\" aka prompt fragments which are passed around and glued together.\n\nI consider myself as having such discipline, being strongly architecturally-minded, user-first, etc. in both design and implementation. And I still struggle to contain the beast many days. I just got through screaming at Claude for intentionally taking a shortcut that I'd forbidden, leading to a ton of wasted time and tokens.\n\nSometimes I feel like I saved weeks of R&D with a single ten-minute task handed off to an agent, other times I feel like I'd get better returns playing slots in Vegas at the alarming rate Claude burns through money.",
+    "depth": 2
+  },
+  {
+    "id": 48320316,
+    "by": "tstrimple",
+    "text": "I'm tired as fuck of anti-ai zealots pretending like every human is a fucking paragon at programming. I've literally never seen Claude Code produce as bad of code as generated by humans. Literally never. Yet the anti-ai zealots pretend like humans never introduce a bug into a system. Only LLMs produce slop or take shortcuts or ignore tests or do incredibly dumb fucking shit. It's fucking ridiculous. As if The Daily WTF didn't exist before LLMs. The reality is the \"average\" programmer is far below the skill floor of Claude Code or other frontier models. Those models will write test and explore more edge cases than the \"average\" developer ever will. But all these zealots pretend like they have only ever worked with the top 1% of the top 1% who never make mistakes or introduce bugs. Ultimately they are full of shit. You're lucky as fuck if your developers can even tell you what common design patterns are. The bar is that low and the HN crowd likes to pretend every developer is Linus Torvalds and not a clueless moron desperately coordinating API layers.",
+    "depth": 3
+  },
+  {
+    "id": 48320760,
+    "by": "MrScruff",
+    "text": "I\u2019d probably word it differently but I agree with much of the sentiment here. I\u2019m also reminded of the stat where 93% of drivers rated themselves as above average.",
+    "depth": 4
+  },
+  {
+    "id": 48320742,
+    "by": "soulofmischief",
+    "text": "Is this comment directed at me? Where did you get an anti-AI sentiment from my comment?",
+    "depth": 4
+  },
+  {
+    "id": 48316770,
+    "by": "fluidcruft",
+    "text": "There's a third camp between these extremes who is like \"goddamn it just type this shit out for me so I don't have to do it myself\".",
+    "depth": 2
+  },
+  {
+    "id": 48317104,
+    "by": "timacles",
+    "text": "Definitely the space I'm in, where I know exactly what I need, exactly how to implement it, just saves time typing 100s of lines.",
+    "depth": 3
+  },
+  {
+    "id": 48317855,
+    "by": "skydhash",
+    "text": "If you\u2019re typing 100s of lines, you\u2019re already doing it wrong. My most used operation is completion, just before copy-paste. The reason I like vim is that it makes such operation so fast. And the reason I like emacs is that it has superpowered version of those operations.",
+    "depth": 4
+  },
+  {
+    "id": 48317099,
+    "by": "slopinthebag",
+    "text": "Yes, the third camp and probably the most effective is to do a decent amount of writing yourself and use the LLMs as codegen machines, but where the DSL is natural language. Deepseek v4 flash is an incredible model for this, you can actually get into flow state as you write code and then delegate boring code to the magic autocompletion machine to autocomplete.",
+    "depth": 3
+  },
+  {
+    "id": 48317901,
+    "by": "skydhash",
+    "text": "The better workflow, and I think the one adopted by people in the second group, is to take a step back from coding, do a bit of thinking about the domain, design a better abstraction for the problem (architecture, data structure, algorithms), and then write the small amount of code you probably need.\n\nCode should grow according to need, not for its own sake. Start small, use it in the real world, and then improve it.",
+    "depth": 4
+  },
+  {
+    "id": 48324964,
+    "by": "slopinthebag",
+    "text": "I agree with that, but there still is some code that eventually needs to be written and there is a subset of that code which can be generated. I think it depends on the domain as well - for example, UI code is trivially generatable by LLMs.",
+    "depth": 5
+  },
+  {
+    "id": 48326456,
+    "by": "skydhash",
+    "text": "RAD tools like Delphi, qt creator, glade, Android Studio, Xcode\u2019s Interface builder,\u2026 have always make it trivial to generate UI code. And there\u2019s libraries for other concerns.\n\nThe majority of a project code are written at the beginning or when a major feature is introduced. The daily work is mostly tweaking. And you can\u2019t tweak without a good understanding of the module.",
+    "depth": 6
+  },
+  {
+    "id": 48320850,
+    "by": "theshrike79",
+    "text": "The difference between prose, art and code is that we can define \"good code\" with deterministic tools. Not perfectly, but to a large degree.",
+    "depth": 2
+  },
+  {
+    "id": 48316715,
+    "by": "observationist",
+    "text": "I, for one, welcome our new AI overlords. They provide me with only the finest Gell-Mann amnesia, straight from the tap.",
+    "depth": 2
+  },
+  {
+    "id": 48321166,
+    "by": "petesergeant",
+    "text": "I think this is a straw man.\n\n> the polarized differences in opinions on HN about the quality of LLM-produced code\n\nAre there strong differences of opinion about the quality? I've seen very few people claim that LLMs write better code than they do.\n\n> one shots things it would take me days to do, and has made me 10X more productive\n\nThis is an entirely different claim from the former, and you're conflating them.\n\nThe boost from LLM-assisted code isn't _expertise_, it's the power of having an always-on team of reasonable junior developers from every discipline you can possibly imagine willing to do your whim.\n\nTake for example Jesse Vincent / obra[0], who is an exceptional developer, with great taste, and a stack of well-received open-source software to his name. He posts a lot on how he's being made more productive by AI-assisted development. Do you have bad news for him about the quality of his work...?\n\n0:  [https://en.wikipedia.org/wiki/Jesse_Vincent] https://en.wikipedia.org/wiki/Jesse_Vincent",
+    "depth": 2
+  },
+  {
+    "id": 48316815,
+    "by": "bitwize",
+    "text": "Eric S. Raymond has basically stopped writing code by hand altogether. He consistently delivers high quality code without intervening to fix the LLM's output himself, much faster than he would have been able to alone. This is very bad news for camp 2 because it means one of three things:\n\n1) he is extraordinarily lucky\n\n2) he is extraordinary brilliant at manipulating LLMs\n\n3) you really are \"holding it wrong\" and you are hobbling yourself with your failure to properly learn the tools\n\nThe first two seem rather unlikely.",
+    "depth": 2
+  },
+  {
+    "id": 48317429,
+    "by": "saghm",
+    "text": "I'm very confused by this logic. Why should I care about his output compared to what I observe from the larger group if he's not an outlier, and if he is an outlier, why would the second one be unlikely? The only way I can make sense of this is if you're claiming that he's both an exceptional coder and that skill in coding by hand is completely uncorrelated to skill in using LLMs to code, and it's not clear to me why that would be more likely than either or both of those being false.",
+    "depth": 3
+  },
+  {
+    "id": 48316918,
+    "by": "floren",
+    "text": "\"Better and faster than ESR\" is not a particularly high bar to clear.",
+    "depth": 3
+  },
+  {
+    "id": 48317553,
+    "by": "AlexCoventry",
+    "text": "I'd need to see some transcripts of his conversations with coding agents, to believe this.",
+    "depth": 3
+  },
+  {
+    "id": 48323396,
+    "by": "NoGravitas",
+    "text": "If ESR is consistently delivering high quality code now, it would be a first.",
+    "depth": 3
+  },
+  {
+    "id": 48318366,
+    "by": "overgard",
+    "text": "Being nerd-famous does not mean one is a good coder.",
+    "depth": 3
+  },
+  {
+    "id": 48317078,
+    "by": "slopinthebag",
+    "text": "4) ESR is in the first group (most likely option)",
+    "depth": 3
+  },
+  {
+    "id": 48317141,
+    "by": "saaaaaam",
+    "text": "I partly write words for a living. Claude is really really bad at writing prose that doesn\u2019t make me want to vomit.\n\nI rarely write code, and only once for a living. But I feel like I\u2019m a superhuman and one step away from being a zillionaire when Claude gives me a bunch of code it has written in seconds. I WILL CHANGE THE WORLD!!\n\nAnd then I remember that Claude can\u2019t write words that don\u2019t make me want to break things and I\u2019m good at writing words but bad at writing code.\n\nSo then I delete the code and go back to doing more profitable things than being the next zuckerfuck.",
+    "depth": 1
+  },
+  {
+    "id": 48321518,
+    "by": "ninjalanternshk",
+    "text": "I\u2019ll take \u201cwhat is Dunning\u2013Kruger\u201d for $200 Alex.",
+    "depth": 2
+  },
+  {
+    "id": 48315795,
+    "by": "flatline",
+    "text": "I don't disagree about the probability, but the current frontier models are not completely useless for writing even in areas where I have significant knowledge. I would not have said that a year ago. You have to watch them like a hawk -- they are good at spitting out plausible sounding nonsense that is hard even for an expert to discern. But the dice roll going on behind the scenes is continually more biased towards being correct/useful than not.",
+    "depth": 1
+  },
+  {
+    "id": 48315967,
+    "by": "Aperocky",
+    "text": "On factual things, potentially. But if I want to read your writing, wouldn't I be trying to pick your brain? Otherwise why don't I read wikipedia or usage documentation?",
+    "depth": 2
+  },
+  {
+    "id": 48315365,
+    "by": "dvt",
+    "text": "Honestly, I can't fathom thinking that LLM writing is even remotely passable. People that think this should honestly read more. One book a month is hardly an aspirational goal. You don't even have to read Melville or Hemingway or Chaucer or Shakespeare, just pick up any popular NYT best seller, and it'll be significantly better than anything an LLM can generate.",
+    "depth": 1
+  },
+  {
+    "id": 48316516,
+    "by": "torginus",
+    "text": "I haven't used these things for writing recreationally for a while (since the Claude 3.X days), so my opinions might be outdated - but they definitely weren't bad - after all they had a huge library of witticisms to pull from, and like Stable Diffusion that pulls from master artists, so do LLMs from skilled writers. Pro writers did come up with an absolute dearth of interesting ideas, and there are mountains of skillfully written prose out there - and its all in the training data, and AI is quite good at pulling from it.\n\nThe advantage of the writing vs images, is that it takes longer to absorb the whole with text, so its less apparent that the whole thing doesn't quite come together.\n\nMy problems was with Claude's prose and ideas is that it kept recycling the tropes and phrases after a while - something that has been observed that these models have very strong statistical biases - when asking for a random number for example, LLMs are far more predictable than even humans, this shows up in unguided writing exercises.\n\nBut as for actually crafting text that is both terse and to the point - such as oneliner explanations, or writing summaries - these models are quite bad. The best I have seen is they could turn a given length of prose into an even longer version - with generally some loss in the tonal accuracy or the points made in there.\n\nAs such they are a terrible tool for professional communication, but unfortunately, lots of people have started using them for exactly that.",
+    "depth": 2
+  },
+  {
+    "id": 48320872,
+    "by": "Applejinx",
+    "text": "Um. Perhaps 'pro writers did come up with an absolute crapload of interesting ideas' would be better writing than 'dearth', which means scarcity and famine?\n\nI get that it sounds clever but that's the damn problem!",
+    "depth": 3
+  },
+  {
+    "id": 48319747,
+    "by": "chungusamongus",
+    "text": "This is just the last domain people can desperately cling to because style is totally subjective.",
+    "depth": 2
+  },
+  {
+    "id": 48319111,
+    "by": "lurquer",
+    "text": "Depends on the type of writing. Blogs and the like? LLM generates  prose that, to me anyway. is unbearable.\n\nHowever, in fiction I\u2019ve found it a useful collaborator. There have been more than a few occasions when, given some notes of how I want a character\u2019s arc to develop in a particular scene, that the LLM gives some excellent pointers and \u2018new\u2019 ideas I hadn\u2019t considered.\n\nAs far as editing my prose, I use it as a \u2018thesaurus of phrases.\u2019 When lazy, I can give it a rough sketch of the paragraph, giving it the gist of what I want, and have it generate a dozen or so versions. I usually can find nuggets of good phrases therein that are useable\u2026 much as I would refer to Roget\u2019s to find a more precise word.\n\nThat said, one has to resist tbe temptation of using a chunk of generated text verbatim; no matter how good it sounds in isolation, the repetitive grammatical structure and other LLM-smells add up quick and become nauseatingly obvious if used frequently.\n\nIn any case, I think LLM\u2019s get a bad wrap for writing\u2026 when used correctly, it is incredibly useful. And, it\u2019s tiresome to hear pretentious snobs assume that an author who uses LLM simply lacks the taste to appreciate how bad the prose sounds. Not true in all cases.",
+    "depth": 2
+  },
+  {
+    "id": 48315603,
+    "by": "xienze",
+    "text": "> I can't fathom thinking that LLM writing is even remotely passable. People that think this should honestly read more.\n\nThis makes me think you're only exposing yourself to high quality writing online and from an intelligent circle of friends and coworkers. The average person's reading and writing abilities are _atrocious_ and only getting worse. We're almost at the point where kids are communicating through abbreviations and emojis exclusively. LLM prose is significantly better than what the average person can produce.",
+    "depth": 2
+  },
+  {
+    "id": 48316055,
+    "by": "xtracto",
+    "text": "Someone way more eloquent than me should write a column titled \"Why do we read?\"\n\nWay back in the past (around 30 years ago) I remember reading an article on \"how to read a book\" or a similar subject. They argued that, you should not skip the acknowledgments, preface and other \"personal\" related sections of a book, because it was there where you got a glimpse of the person that was writing the book.  The idea being that, you should had in mind that the person writing was explaining something through you.\n\nCarl Sagan even has a video where he argues Books/Writing is some sort of communication through time.\n\nNow, this has been the case historically: A person writes some text (even in botched language like my writing, as English is not my first language) with thinking that someone else in the future will read the ideas and reason about them.\n\nBut what about text written by an LLM? Does it have inherent intention? When reading LLM text, it feels like looking at those \"this is not a person\" photos. Yeah, they are words, yeah they form sentences and paragraphs but... they lack \"soul\".",
+    "depth": 3
+  },
+  {
+    "id": 48316198,
+    "by": "devin",
+    "text": "It's not \"Why do we read?\" but something related that is coming up a lot in my thinking lately is Walter J. Ong's \"Writing is a Technology that Restructures Human Thought\".",
+    "depth": 4
+  },
+  {
+    "id": 48316408,
+    "by": "avador",
+    "text": "Isn\u2019t \u201cWriting is a Technology that Restructures Human Thought\u201d another way of saying that \u201cfeedback has an effect\u201d?\n\nIf so, this seems to be a trivial (still worthy) assertion.\n\nFor example, I intend to, say, construct a shed. I make mistakes that I only see because I actually constructed. I revise future endeavours involving sheds.\n\nI admit to not having read this piece, and am merely reacting to the title.\n\n\u2014-\n\nOkay, I got through the first paragraph of Walter\u2019s writings. While I nod to the bitterness (I assent to the existence of it), I do not bow.",
+    "depth": 5
+  },
+  {
+    "id": 48317198,
+    "by": "fcarraldo",
+    "text": "Do you think the first paragraph is enough of a basis to form an opinion from?",
+    "depth": 6
+  },
+  {
+    "id": 48317410,
+    "by": "avador",
+    "text": "Not normally, no. Can you point to a divergence of the bitterness in the subsequent text?\n\nWhat I find to be the normal pattern (by intuition) is that the condensed leading text belies the expansive following text. This is likely lazy (a shortcut) and I am open to correction at your effort. If a call to your effort (I apologize) is unpalatable then I concede.",
+    "depth": 7
+  },
+  {
+    "id": 48316878,
+    "by": "cortesoft",
+    "text": "> Way back in the past (around 30 years ago) I remember reading an article on \"how to read a book\" or a similar subject. They argued that, you should not skip the acknowledgments, preface and other \"personal\" related sections of a book, because it was there where you got a glimpse of the person that was writing the book. The idea being that, you should had in mind that the person writing was explaining something through you\n\nMaybe? That is one reason to read, but there are a lot of other reasons, too. It doesn't mean you are doing it wrong if you want to read something and don't care at all about the person who wrote it.",
+    "depth": 4
+  },
+  {
+    "id": 48318271,
+    "by": "customguy",
+    "text": "Yeah, but when we talk about food, there are different tastes, and there is stuff like \"you can also use it as a doorstop\". Fine, but that doesn't make a doorstop food.",
+    "depth": 5
+  },
+  {
+    "id": 48315688,
+    "by": "sublinear",
+    "text": "Are we also saying it's acceptable to feed people junk because it's better than what they would cook?\n\nAt some point you're just making bad excuses for false scarcity.",
+    "depth": 3
+  },
+  {
+    "id": 48315804,
+    "by": "cryzinger",
+    "text": "I think it's both true that most LLM writing (\"writing\") sucks and that it's better than what a lot of people can produce unassisted. Which to me doesn't mean that we should roll over and accept LLM output as a lesser evil... it just means that the bar is so low it might as well be in hell, and rapidly getting lower :')",
+    "depth": 4
+  },
+  {
+    "id": 48320875,
+    "by": "TheOtherHobbes",
+    "text": "It's nowhere close to good writing, but it's better than the dreck many self-published writers produce and sell - successfully.\n\nBut that's the real problem with LLMs. Culture is aspirational. It has a consistent goal - find the best, highlight it and distribute it so others can build on it.\n\nLLMs are the opposite - produce as much of everything as possible at the lowest possible barely-acceptable-if-you're-lucky quality.\n\nThis was already a problem before LLMs. Mass market content farms - Kindle Unlimited, Wattpad, Spotify, social media in general - give everyone an equal voice, with mass popularity and \"likes\" as the only metric.\n\nNow LLMs are automating the creation process, so everyone gets more of everything.\n\nExcept inspiration. Not so much of the \"That's astounding, I wonder if I can learn from that and reach for something in that league.\"",
+    "depth": 5
+  },
+  {
+    "id": 48316152,
+    "by": "dspillett",
+    "text": "They weren't saying it is aceptable, or making excuses, just stating how things are. Average reading and writing abilities seem to be dropping noticeably in many circles. Probably as a consequence of falling attention spans rather than an issue in is own right.",
+    "depth": 4
+  },
+  {
+    "id": 48315808,
+    "by": "solumunus",
+    "text": "It\u2019s acceptable for someone to buy a ready meal or takeout if it\u2019s better than what they can cook. Why wouldn\u2019t it be? Is that the greatest choice for their personal development? Probably not, but life is complex and folk have limited capability and bandwidth for acquiring skills.",
+    "depth": 4
+  },
+  {
+    "id": 48315818,
+    "by": "xienze",
+    "text": "Tell me your thoughts on the quality of LLM-generated code. I've never understood this attitude where people are absolutely disgusted by the slightest whiff of AI prose but will happily slurp up AI-generated code by the bucketful and proudly proclaim that it's OK because it's better than the average developer can produce.",
+    "depth": 4
+  },
+  {
+    "id": 48316056,
+    "by": "dvt",
+    "text": "The key difference is that code is not the end product, but writing is itself the product. (No one's doing \"vibe-product-management\" for example.) Tbh, I still think code can have a beauty and elegance to it (like a logical proof can, or like a mathematical theorem can), but there's a difference between the two and I'm way less forgiving of AI writing than I am of AI code, especially considering most code (by line count) is just boilerplate anyway.",
+    "depth": 5
+  },
+  {
+    "id": 48316284,
+    "by": "ryandrake",
+    "text": "> The key difference is that code is not the end product\n\nI think this is open to debate. To me, the code has always been the goal, and the fact that writing it sometimes serves to produce a product is important to others (and what brings the paychecks in), but ultimately not something I've ever been excited about or interested in throughout my career. So I judge a developer based on the beauty and quality of the code he produces, just as I judge an LLM by the same sorts of things.\n\nThe fact that AI can one-shot a working CRUD app is not really that interesting to me. If it could make the code beautiful, concise, maintainable, extensible, minimal, performant, readable, and bug-free: a work of art and love that a craftsman would be proud of... that would impress me.",
+    "depth": 6
+  },
+  {
+    "id": 48316377,
+    "by": "dvt",
+    "text": "Imo, this is like saying \"I judge a carpenter based on how straight they can cut a piece of plywood.\" Or like saying \"I judge an artist on how accurately they can draw a circle by hand.\"\n\nI mean that's certainly one way of looking at it, and both can be impressive technical feats. But most people judge carpenters and artists on their end products, their overall vision, their motifs, their philosophy, and so on. On the other hand, as a trained logician, I definitely see proofs (which, by the Curry\u2013Howard isomorphism, are computer programs) have some degree of beauty-within-themselves, but that's quite hard to achieve. Not everyone is a G\u00f6del, after all.\n\nI also think programming languages, despite being Turing complete (which is frankly not saying much), are far too limiting to truly construct magnificent things with.",
+    "depth": 7
+  },
+  {
+    "id": 48316822,
+    "by": "seba_dos1",
+    "text": "No, it's more like saying \"I judge an artist on my terms regardless of how well they sell on the market\".\n\n> artists on their end products, their overall vision, their motifs, their philosophy, and so on\n\nThe main output of programmer's work is their understanding of the system they work with, the rest comes from that. Behind the code there's its author's intention, vision, their tastes, philosophy and experience that makes them tackle problems in specific ways. Code review is, aside of quality assurance, mostly about communication between people, convincing them to your ways of doing things (or getting convinced by others) and communicating needs. It's what keeps projects running and what makes people improve their skills.\n\nYou don't need to see magnificence in code to realize that there's more to it than just the syntax tree to compile.",
+    "depth": 8
+  },
+  {
+    "id": 48316923,
+    "by": "dvt",
+    "text": "> No, it's more like saying \"I judge an artist on my terms regardless of how well they sell on the market\".\n\nI feel like I need to push back here, because some of the best programmers around: Carmack, Torvalds, Johnathan Blow, even folks that make programming languages like K&R, Rob Pike, etc. are judged on their respective end products, not on minutia found in code reviews. For example, if I asked you \"why do you think Stroustrup is a good programmer?\"\u2014you wouldn't cite some obscure optimization he came up with, but would rather talk about his overall vision for C++, his ideas of evolving C, his staunch anti-GC takes over the years (and their justification), etc.",
+    "depth": 9
+  },
+  {
+    "id": 48317059,
+    "by": "seba_dos1",
+    "text": "You're contradicting yourself. First you say that they're judged on the end product, then you mention things that are very clearly not end products but thoughts and visions behind them that only lead to end products.\n\nFrankly, I have no real idea of how good Carmack, Torvalds or Blow are as programmers, I have never worked with them so I don't really have a way to tell (even though I do contribute to Linux and I've seen some of their code). They're likely past a certain above-average threshold, but they haven't got famous for their programming skills.\n\nThat said, if you think Torvalds isn't being judged on \"minutia found in code reviews\", I'm not sure your take is very serious in the first place - that's the main thing he was being judged on for decades now :)",
+    "depth": 10
+  },
+  {
+    "id": 48317321,
+    "by": "dvt",
+    "text": "> You're contradicting yourself\n\nHow?\n\n> you mention things that are very clearly not end products but thoughts and visions behind them that only lead to end products\n\nThoughts and visions are much more closely intertwined with end products (in fact, likely supercede them) than some random code review is, so I'm not seeing where the contradiction lies.\n\n> that's the main thing he was being judged on for decades now\n\nLinus hasn't written any code[1] in at least half a decade+. To argue that he's being judged on his code misunderstands why Linux became so popular to begin with.\n\n[1]  [https://linux.slashdot.org/story/20/07/03/2133201/linus-torvalds-i-do-no-coding-any-more] https://linux.slashdot.org/story/20/07/03/2133201/linus-torv...",
+    "depth": 11
+  },
+  {
+    "id": 48317819,
+    "by": "seba_dos1",
+    "text": "Either I'm bad at communicating today or you're bad at reading, because you're now using my points, so I'm not sure what to make out of it. Let me repeat myself then:\n\n> Code review is (...) mostly about communication between people, convincing them to your ways of doing things (or getting convinced by others) and communicating needs. It's what keeps projects running and what makes people improve their skills.\n\nThe way he does that is exactly what most news stories about Torvalds have been focusing on for many years now. In practice, unless you run a project alone, code review is where thoughts and visions surface up the most. Or, well, should be - not everyone is good at it.\n\n(that said, even though my point is that's he's obviously not being judged on his code, you can easily find code that he wrote as late as this month, so your statement is clearly wrong even if that doesn't really influence the discussion here - code review is still the vast majority of his job, just like he stated there under your link)",
+    "depth": 12
+  },
+  {
+    "id": 48318321,
+    "by": "dvt",
+    "text": "> Either I'm bad at communicating today or you're bad at reading\n\nCould be both :)\n\nThe way I look at it is like this, and you could call this my thesis:  I do not categorically think that code in itself is primarily relevant to us looking at a \"software engineer\" and saying \"wow, she's good.\" The product (the Linux kernel, in Torvalds' case) is, on the other hand, what actually matters. I think we're getting caught up on the idea of a code review; a code review can serve many purposes, as a code review is basically just people talking about the code, the product, their feelings, and so on. Sure, sometimes it's like \"this `i` should be a `j`\", but other times it's \"this should serve feature X, not feature Y.\"\n\nOverall, I don't think Torvalds is judged by his code quality. And the snippet I cited is the man himself saying \"I don't write code anymore\" so I took that at face value, even though my conviction stands wether or not he actually does still write code. I don't think anyone actually cared that much about his code quality (maybe with the caveat that the kernel didn't crash).\n\nPS: I could be totally wrong, and this is an interesting & stimulating conversation, regardless.",
+    "depth": 13
+  },
+  {
+    "id": 48322979,
+    "by": "ryandrake",
+    "text": "What I'm trying to get at is more like: I judge a carpenter based on how beautiful, minimal, and functional he makes a chest of drawers, not based on how quickly he can go to market with particle board and glue.\"",
+    "depth": 8
+  },
+  {
+    "id": 48316121,
+    "by": "sublinear",
+    "text": "I'm not sure if your question is serious, but I've been a developer for over a decade now.\n\nI write code for a living mostly by hand. In the odd case where I need help I still use google like I always have. I spend more of my time in meetings or staring at the ceiling than writing code. This was also true a decade ago before LLMs. It was also true several decades ago when someone else's ass was in my seat.",
+    "depth": 5
+  },
+  {
+    "id": 48316235,
+    "by": "ryandrake",
+    "text": "...or read.\n\nAt least in the USA: 21% of adults in the US are illiterate in 2024. 54% of adults have a literacy below a 6th-grade level [1].\n\n1:  [https://www.thenationalliteracyinstitute.com/2024-2025-literacy-statistics] https://www.thenationalliteracyinstitute.com/2024-2025-liter...",
+    "depth": 3
+  },
+  {
+    "id": 48316551,
+    "by": "torginus",
+    "text": "Hasn't this always been an intelligence thing? I think across all societies and eras we find that generally a a rather alarmingly large section of population is unable to grasp basic written instructions - and that section usually increases to the majority of people, when we start getting into things like an employment contract, or mortgage document.",
+    "depth": 4
+  },
+  {
+    "id": 48328506,
+    "by": "watwut",
+    "text": "In an international comparisons, USA comes out somewhere in the middled of developed countries - as it always did. And the differences between countries are not that large.\n\n54% of adults have a literacy below a 6th-grade level is simply not a some kind of catastrophe and it does not mean those people cant read. There is this idea that 6th-grade level is almost like not knowing how to read, but that is simply not the case at all.",
+    "depth": 4
+  },
+  {
+    "id": 48315701,
+    "by": "gchamonlive",
+    "text": "Really hard to take your comment serious when the only post on dvt.name is a hello world page, because at least OP is trying to publish and you are lacking moral high ground to judge him thinking LLM writing is good.",
+    "depth": 2
+  },
+  {
+    "id": 48315802,
+    "by": "jvanderbot",
+    "text": "Oh if I had a nickle for every web domain I bought and put a hello-world.html into s3 and never checked again ...\n\nFWIW, I'm with GP. It's quite easy to get just mind-numbingly tired reading beyond the first two sentences of a typical LLM output, let alone on something I'm familiar with.",
+    "depth": 3
+  },
+  {
+    "id": 48316091,
+    "by": "gchamonlive",
+    "text": "It's on dvt about page in HN, so hardly something hidden. People are different, and in the blog post itself the author writes that in time he became tired of the way LLM wtites",
+    "depth": 4
+  },
+  {
+    "id": 48316187,
+    "by": "jvanderbot",
+    "text": "I'm trying to playfully divert away from the captious and unhelpful comment, but if you want to double down, that's ok too. Cheers, my dude, have a good Thursday.",
+    "depth": 5
+  },
+  {
+    "id": 48316231,
+    "by": "gchamonlive",
+    "text": "Sure whatever, why even bother commenting if you didn't want to engage then. I don't owe you anything just because you were trying to cheerfully diverge.\n\nSame to you though, have a nice day",
+    "depth": 6
+  },
+  {
+    "id": 48315780,
+    "by": "dvt",
+    "text": "Lol my blog was hacked recently and I've been lazy about moving my backed-up mySQL DB to the new WP installation. Not sure where moral high ground enters the picture. If I really wanted to be an asshole, I'd cite a book I co-wrote and another I edited.",
+    "depth": 3
+  },
+  {
+    "id": 48316108,
+    "by": "gchamonlive",
+    "text": "> Honestly, I can't fathom thinking that LLM writing is even remotely passable. People that think this should honestly read more.\n\nHow do you think the author of the page would read this? That sounded pretty asshole-like for me. If it's not for you I'm really sorry for you, you must have to endure really screwed up people.",
+    "depth": 4
+  },
+  {
+    "id": 48316239,
+    "by": "dvt",
+    "text": "Maybe you're right and I was a bit too snarky, apologies to the author if he/she was offended. Writing anything implies some vulnerability, and criticism should be constructive.",
+    "depth": 5
+  },
+  {
+    "id": 48316351,
+    "by": "gchamonlive",
+    "text": "I know, and we've all been there. It's comfortable to criticize, only when I had a very divisive publication hit front page that I've seen how hurtful dismissive or sarcastic comments can be ( [https://news.ycombinator.com/item?id=45277346] https://news.ycombinator.com/item?id=45277346)\n\nAnd sorry about your blog :/ didn't know it was hacked. Looking at the comment section of the hello world though it gets pretty obvious LOL. You should consider removing it from your HN about though.",
+    "depth": 6
+  },
+  {
+    "id": 48319537,
+    "by": "dropbox_miner",
+    "text": "> A general pattern for LLMs is that they look really good at things you are bad at.\n\nNaah I disagree with this. I think LLM's are good at gas-lighting you into thinking that good writing only comes in one flavor. And LLMs prefer a very \"textbook/technical-manual\" coded flavor of writing because maybe that way they are more useful to us humans. But human writing is not just about crafting the most elegant sentences. Sometimes great writing is just this doggo-drawing meme:\n\n [https://knowyourmeme.com/photos/2160304-the-winner-of-this-contest-was-chosen-through-likes] https://knowyourmeme.com/photos/2160304-the-winner-of-this-c...",
+    "depth": 1
+  },
+  {
+    "id": 48319162,
+    "by": "glouwbug",
+    "text": "You can triangulate. Ask it the same thing in different ways and with different LLMs. Operate in domains where the output is verifiable, like in the sciences but in terms of numerical computing. Study the output, graph it, learn it, reason with it, rinse, and repeat until your mental model makes practical sense.",
+    "depth": 1
+  },
+  {
+    "id": 48318703,
+    "by": "userbinator",
+    "text": "That's because LLM output is \"average\"; so if you're below, it will obviously look better than what you can do, and vice-versa. It will be interesting to see what happens when current LLM output becomes the bottom, as everyone worse has pulled themselves up to that level.",
+    "depth": 1
+  },
+  {
+    "id": 48318379,
+    "by": "byzantinegene",
+    "text": "the other day there was a hackernews comment about ai-generated music, and this poster claimed that a friend generated ai music and got as much enjoyment as actual ones composed by musicians. I suppose this falls under the same camp..",
+    "depth": 1
+  },
+  {
+    "id": 48316855,
+    "by": "cortesoft",
+    "text": "So what does this mean in practice, though?\n\nLet's say you are correct.\n\nYou ask an LLM to write something for you, and to you it looks really, really good. So based on your conjecture, that means I am not a very good writer.\n\nOk, but how does that change what I should do? If I am not a very good writer, that means an LLM IS actually better than me, even if it might not be objectively good to an expert writer.\n\nMy two choices are to keep producing my own crappy writing, or use an LLM to create better (but not great) writing.\n\nWouldn't it make sense to use an LLM?\n\nIt seems to me your premise leads you to the same conclusion you would reach even if your premise was false; if me thinking an LLM is good at a task means I am very bad at that task, I am probably better off having an LLM do it. On the other hand, if you are wrong, and I think an LLM is good at something because it actually IS good at that thing, then I should also use the LLM to do the task.\n\nEither way, the LLM is better than me at the thing.",
+    "depth": 1
+  },
+  {
+    "id": 48316990,
+    "by": "soledades",
+    "text": "Well, no. The LLM is just better than you in a narrow band that appears wider to someone below than above.\n\nFrom above, or from below with adequate exposure, it feels facile and hollow. It is good at weaving grammatical structures. It is not good at thinking in words in a way that invites a fellow human along for the journey. Because it doesn't think.",
+    "depth": 2
+  },
+  {
+    "id": 48316879,
+    "by": "soneca",
+    "text": "Well, practice to get better at writing (and, therefore, judging writing) yourself. It seems obvious. Your skills are not frozen in time and set in stone.",
+    "depth": 2
+  },
+  {
+    "id": 48318409,
+    "by": "overgard",
+    "text": "Well, the third choice is to develop as a person and become better at writing. Which you do by doing some crappy writing and learning from it.",
+    "depth": 2
+  },
+  {
+    "id": 48317396,
+    "by": "mrob",
+    "text": ">If I am not a very good writer, that means an LLM IS actually better than me\n\nIf you're not a very good writer, I'll at least skim your work to see if it contains any good ideas. If it's slop, I'll just close the tab. You already told me it's not worth caring about, so I'll agree with your decision.",
+    "depth": 2
+  },
+  {
+    "id": 48317123,
+    "by": "slopinthebag",
+    "text": "> My two choices are to keep producing my own crappy writing, or use an LLM to create better (but not great) writing\n\nAre you also an LLM or do you have the capacity to learn and grow?",
+    "depth": 2
+  },
+  {
+    "id": 48317484,
+    "by": "saghm",
+    "text": "I mean, you have the ability to learn to do stuff better to a certain extent, so it's not like your only choices are \"suffer through the writing I'm capable of producing today for the rest of my life\" or \"give up on ever writing anything myself\". Writing stuff yourself is pretty much a requirement of getting better at it, and arguably even if you do intend to use LLMs to supplement it, having a better baseline will be valuable for additional iteration with the LLM.",
+    "depth": 2
+  },
+  {
+    "id": 48320781,
+    "by": "MrScruff",
+    "text": "This is true, but what is also true is that with each new generation of models (and not just for code generation) it becomes less and less true.",
+    "depth": 1
+  },
+  {
+    "id": 48320840,
+    "by": "svelle",
+    "text": "IMO LLM writing hasn't significantly improved since maybe GPT4. \nIt still does the exact same \"It's not x, it's actually y\" tropes and many of the other common LLM smells.\nMost LLM generated text is immediately discernible as such.",
+    "depth": 2
+  },
+  {
+    "id": 48321070,
+    "by": "MrScruff",
+    "text": "You can avoid the smells with a prompt. I have a benchmark involving short story writing within specific styles and the level of sophistication achievable is increasing over time, in my opinion.",
+    "depth": 3
+  },
+  {
+    "id": 48315492,
+    "by": "skydhash",
+    "text": "I dabble in drawing and I find LLM images (and maybe some non LLM one) abhorrent. As for why, the reason I can think of are: no consistency (perspective, small details, and color theory) and too much details making it a visual noise. In most painting, the artist will have a subject that is most detailed (to draw the eyes) and from there, the lost of details will follow some kind of logic. This is how you pinpoint what the artist is most interested in. LLM looks like a filter applied to a montage of pictures.",
+    "depth": 1
+  },
+  {
+    "id": 48315624,
+    "by": "gchamonlive",
+    "text": "It's like a gross looking slice of pizza, it's mindbending because at first it looks good, after all it's pizza, but something in it makes it really disgusting",
+    "depth": 2
+  },
+  {
+    "id": 48316828,
+    "by": "embedding-shape",
+    "text": "Maybe we're looking at different pizza slices, but all I see is bread, tomato sauce and cheese, and it all looks delicious.",
+    "depth": 3
+  },
+  {
+    "id": 48321677,
+    "by": "gchamonlive",
+    "text": "Yes  [https://downtownlongbeach.org/wp-content/uploads/Broadway-Pizza-GOOD.jpg] https://downtownlongbeach.org/wp-content/uploads/Broadway-Pi... but  [https://i.chzbgr.com/full/10412716544/h06A6A341] https://i.chzbgr.com/full/10412716544/h06A6A341\n\nAnd both come from ovens.",
+    "depth": 4
+  },
+  {
+    "id": 48319445,
+    "by": "thefz",
+    "text": "> What that means is that if you find yourself thinking of its output as significantly better than yours in a particular domain, there's a high chance that you are not equipped to judge that quality effectively.\n\nThis is why code generation is a disaster waiting to happen. Hunderds of thousands of \"programmers\" with no idea of what they are pushing to production.",
+    "depth": 1
+  },
+  {
+    "id": 48315351,
+    "by": "bell-cot",
+    "text": "Mnemonic:  geLL-Mann amnesia effect",
+    "depth": 1
+  },
+  {
+    "id": 48316942,
+    "by": "robgibbons",
+    "text": "Cuts very close to the Dunning-Kruger effect.",
+    "depth": 1
+  },
+  {
+    "id": 48317547,
+    "by": "NoboruWataya",
+    "text": "It's basically just another instance of Gell-Mann Amnesia. Ask an LLM to discuss a topic you are an expert on, and you will realise it is full of errors, but ask it to discuss a topic you know nothing about and you will, mysteriously, assume it is very intelligent and correct.",
+    "depth": 1
+  },
+  {
+    "id": 48315567,
+    "by": "spdustin",
+    "text": "- \u201c(The) honest caveat:\u201d (or \u201cgenuine caveat:\u201d, both with the colon)\n\n- \u201c(The) honest answer:\u201d (again, with colon)\n\n- \u201cThe thing to internalize:\u201d\n\n- \u201cThe smoking gun:\u201d\n\n(really, sentences that start with \u201cThe :\u201d are a strong tell, but those four are the most prolific)\n\n- \u201cload bearing\u201d (when not talking about architecture)\n\n- \u201cblast radius\u201d (when not talking about actual explosives, but rather the effect of an event/action)\n\n- \u201csmoke test\u201d (esp. when \u201csanity check\u201d is more apropos)\n\n- Lists of three clauses/adjectives where the third is really just a combination of the first two\n\n- Referring to the \u201cshape\u201d of things figuratively\n\n- Social media posts that end with \u201cCurious if anyone\u2026\u201d\n\n- Stories or anecdotes using. \u201cOh. Oh.\u201d (where the second \u201coh\u201d is italicized)\n\nEdit: Yes, some of those last ones are terms that we often use as devs...but I would argue about the actual frequency of their use. Plus, these tells live on in prose generated by the latest models.",
+    "depth": 0
+  },
+  {
+    "id": 48315869,
+    "by": "srik",
+    "text": "These LLM idioms are constantly being consumed every day and are bound to make it into the next, if not current, generation's vernacular. It's going to be unbearable.",
+    "depth": 1
+  },
+  {
+    "id": 48327633,
+    "by": "j_bum",
+    "text": "The one I hate the most is, \u201cAnd this is what most people miss:\u201d",
+    "depth": 2
+  },
+  {
+    "id": 48315985,
+    "by": "thewebguyd",
+    "text": "> I would argue about the actual frequency of their use\n\nAssuming you mean load bearing & blast radius, I'd see those used and use them myself very frequently pre LLM, mostly in online discussions though so its telling where they got their training data. Load bearing itself is/was a pretty normal phrase in the ops world in daily discussion.\n\nSmoke test though, I can't say I've ever see irl usage.",
+    "depth": 1
+  },
+  {
+    "id": 48319998,
+    "by": "palmotea",
+    "text": "> Smoke test though, I can't say I've ever see irl usage.\n\nWe use it all the time at my employer, and have for decades. They're basic tests to tell you if the app is up or not.\n\nLike: you go to this page, and it shows a big green banner if the app can connect to the database and its disk isn't full. If one of those basic things are wrong you get big red banner or you can't load the page at all.",
+    "depth": 2
+  },
+  {
+    "id": 48316025,
+    "by": "Barbing",
+    "text": "Heard smoke test IRL & was confused to see it used indeed in place of \u201csanity check\u201d. Weird.",
+    "depth": 2
+  },
+  {
+    "id": 48316415,
+    "by": "tempest_",
+    "text": "I have heard people use smoke test but not nearly at the same rate an LLM uses.\n\nIf a repo is bare of CLAUDE.md but mentions a smoke test in a commit in the last year I assume it to be LLM written.",
+    "depth": 3
+  },
+  {
+    "id": 48318085,
+    "by": "ses1984",
+    "text": "At my last two jobs, smoke tests were a common topic of conversation.",
+    "depth": 4
+  },
+  {
+    "id": 48317290,
+    "by": "tom_",
+    "text": "Can't remember when I first heard it, but I searched my email and got a pile of results from 2012 and 2009. It's possible there's earlier in there somewhere but 2009 was a busy year so I got bored of clicking the \"more results\" button...",
+    "depth": 3
+  },
+  {
+    "id": 48317658,
+    "by": "ethin",
+    "text": "I think I've only read \"smoke test\" in a programming book (or maybe an OSDev wiki) but I can't remember now",
+    "depth": 4
+  },
+  {
+    "id": 48317645,
+    "by": "bloomfieldj",
+    "text": "I had GPT research Claude 4.7isms:  [https://chatgpt.com/share/6a18e3b4-1308-832a-9263-bed823de3ff2] https://chatgpt.com/share/6a18e3b4-1308-832a-9263-bed823de3f...\n\nAlso, here\u2019s a link to well-documented patterns by Wikipedia:  [https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing] https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+    "depth": 1
+  },
+  {
+    "id": 48319337,
+    "by": "mjrbrennan",
+    "text": "The funniest one I've seen with regularity is belt-and-suspenders/belt-and-braces, when I've never seen anyone ever use that term. I had to tell AI to stop using it, it was just annoying.",
+    "depth": 1
+  },
+  {
+    "id": 48321563,
+    "by": "ninjalanternshk",
+    "text": "I frequently use \u201cbelt-and-suspenders\u201d \u2014 probably not in wri\u2026 crap I just used an em dash.",
+    "depth": 2
+  },
+  {
+    "id": 48316635,
+    "by": "jedbrooke",
+    "text": "for me the most annoying one is \u201cescape hatch\u201d.\n\nEverything is an escape hatch, try catch is an escape hatch, a cli flag is an escape hatch. It makes no sense, and quickly ended up in my \u201cbanned words and phrases\u201d md file",
+    "depth": 1
+  },
+  {
+    "id": 48319276,
+    "by": "ffsm8",
+    "text": "Huh, we have a process which has several exit criteria - which are pretty expensive to calculate with multiple rest calls to get through each...\n\nI've always called them exit hatches, entirely unrelated to llms...\n\nNow I wonder if I need to reword the docs... But realistically speaking, llms are the only readers of them nowadays, so I guess it doesn't matter.",
+    "depth": 2
+  },
+  {
+    "id": 48317232,
+    "by": "spiffistan",
+    "text": "These seem mostly like Claudeisms. I feel each model (and even generation) has their own set of these isms.",
+    "depth": 1
+  },
+  {
+    "id": 48317281,
+    "by": "unshavedyak",
+    "text": "Which seems logical - if they were somehow consistent between all LLMs i'd be even more curious how LLMs are... crab-evolving to 'isms, but hopefully that's not the case hah. (i say crab-evolving in jest)",
+    "depth": 2
+  },
+  {
+    "id": 48321797,
+    "by": "sznio",
+    "text": "I use qwen3.5 locally and it often outputs a lot of claude-isms. Claude actually stopped telling me that I'm absolutely right with every message, but Qwen still does.\n\nI think that the convergence of these tics is just a symptom of distillation.",
+    "depth": 3
+  },
+  {
+    "id": 48320908,
+    "by": "Applejinx",
+    "text": "That's the gremlin to keep an eye on ;)",
+    "depth": 3
+  },
+  {
+    "id": 48317874,
+    "by": "sdthjbvuiiijbb",
+    "text": "The ones that annoy me the most, which are very widespread, are the clickbaity one-weird-trick style ones:\n\n\"what really Xes\"\n\"is genuinely X\"\n\"that actually Xes\"\n\"is/makes/does/etc a real X\"\n\nThe real/genuine/actual cluster of words are wildly overused.",
+    "depth": 1
+  },
+  {
+    "id": 48321117,
+    "by": "chantepierre",
+    "text": "I routinely use \"load bearing\" in conversations and writing, both seriously and ironically (like a \"load bearing just\" or \"load bearing paint\").. maybe I should stop.",
+    "depth": 1
+  },
+  {
+    "id": 48321172,
+    "by": "strogonoff",
+    "text": "Considering that LLMs output continuously becomes more human-sounding (by design), you\u2019d either have to continuously run what you write through various detectors and keep changing it or you must resign to inevitably be called an LLM at some point.\n\nSimultaneously, because humans subconsciously mimic what we see, we also converge to sound more LLM-ish.\n\nThe harsh reality is that no matter what you write and how much research you put into it\u2014especially if you try to be legible to others and not make grammatical mistakes\u2014someone could discount all that and claim you just prompted an LLM. If they want, they can always find some magic \u201cAI checker\u201d that will return a high enough probability. We all know that with a good enough prompt and with round-trip validation against a checker (there are definitely products with this all built in) it will avoid the common tells, it\u2019s just the matter of a few extra tokens.\n\nIt\u2019s somewhat demotivating.",
+    "depth": 2
+  },
+  {
+    "id": 48328289,
+    "by": "Terretta",
+    "text": "Where did you pick that up from?",
+    "depth": 2
+  },
+  {
+    "id": 48319574,
+    "by": "Derbasti",
+    "text": "I wonder, could we use these catch phrases to track down what data was used dor training? They must have occurred in abundance in some training corpus. Perhaps some specific company's email culture?",
+    "depth": 1
+  },
+  {
+    "id": 48319822,
+    "by": "raincole",
+    "text": "> They must\n\nNope. LLMs are RLHF'ed to the brim.",
+    "depth": 2
+  },
+  {
+    "id": 48320408,
+    "by": "dash2",
+    "text": "Codex seems to love threading things through things. I don't usually know what it means, but it sounds clever.",
+    "depth": 1
+  },
+  {
+    "id": 48317282,
+    "by": "cheesecompiler",
+    "text": "I hear \"Substrate\" a LOT.",
+    "depth": 1
+  },
+  {
+    "id": 48316466,
+    "by": "triyambakam",
+    "text": "- Ending something with \"happy to ...\" (usually \"happy to help\")\n\n- And a variant of the above is omitting the subject, \"happy to\" instead of \"I am happy to\"\n\n- Codex refers to \"the spine\" of something\n\n- Claude often says some decision is \"locked\" (i.e. decided on)",
+    "depth": 1
+  },
+  {
+    "id": 48319981,
+    "by": "palmotea",
+    "text": "- The [utterly mundane thing] was decisive.",
+    "depth": 1
+  },
+  {
+    "id": 48320185,
+    "by": "globular-toast",
+    "text": "This stuff reminds me of the classic writing style guide Plain Words by Gowers which advises against all of the above nonsense. I absolutely hate the magazine writing style that LLMs seem to love to regurgitate. It's even worse when it's used not for entertainment but for actually conveying information.",
+    "depth": 1
+  },
+  {
+    "id": 48316058,
+    "by": "tptacek",
+    "text": "The LLM writing sameness is bad. Use LLMs to help your writing! But don't include a word they generate, even just a vocabulary adjustment, in your own output. Have them critique structure and flow, spot overused words and passive constructions and dumb picks for topic sentences. It's great for that, and those are all objective improvements in your writing that won't mess up your style.\n\nThe LLM sameness in web design is good. Most sites shouldn't try to be idiosyncratic. The best design for a site with real utility is legibility, and LLMs are better at that than the median developer. Always laying out the same buttons? Always using the same type scales? Good! If it looks good to you, you weren't going to do better on your own, and you were very likely to do worse.",
+    "depth": 0
+  },
+  {
+    "id": 48316861,
+    "by": "bobmarleybiceps",
+    "text": "I've been using claude while trying to setup a new personal site. It's very nice to be able to say \"I want a nice looking menu with links to other pages\" and it spits out something good enough.\n\nI would feel very weird using LLMs for writing, except for filing out stupid applications. I've had collaborators use LLMs for some technical writing and it's pretty much always borderline nonsense that has the aesthetic of something correct. For creative writing, I feel like heavily using an LLM would defeat the purpose :shrug:",
+    "depth": 1
+  },
+  {
+    "id": 48317744,
+    "by": "joegibbs",
+    "text": "My problem with LLM web design is that it adds a lot of useless stuff all over the place. GPT-5.x is particularly bad for this. If it makes e.g. a dashboard it includes a ton of figures and bits of text all over the place that mostly just say the same thing twice. But of course this is not really an innate problem with the architecture and will probably be sorted out soon, and you'll get good results if you come up with all the copy first and then ask it to make the site.",
+    "depth": 1
+  },
+  {
+    "id": 48319777,
+    "by": "nottorp",
+    "text": "> The LLM sameness in web design is good.\n\nI'd say that sameness isn't good either from a LLM or solo founder SaaS #171876137.",
+    "depth": 1
+  },
+  {
+    "id": 48319641,
+    "by": "nicbou",
+    "text": "I use them as a metaphor search and advanced dictionary. Every word is mine, but I get to improve my English and use some lesser-known (to me) expressions.\n\nI have not used to review my writing yet. Is it that good?",
+    "depth": 1
+  },
+  {
+    "id": 48316259,
+    "by": "devin",
+    "text": "Absolutely agree. I recently wrote a speech and can't imagine how terribly hack it would have been had I taken the LLM's words as my own. I have second hand embarrassment just thinking about someone writing something important for or about a loved one and using the saccharine crap that was suggested at various points to me. Absolute drivel and a giant flag that you don't actually care enough about the audience to bring your own words.",
+    "depth": 1
+  },
+  {
+    "id": 48316416,
+    "by": "sofixa",
+    "text": "> The LLM sameness in web design is good. Most sites shouldn't try to be idiosyncratic. The best design for a site with real utility is legibility, and LLMs are better at that than the median developer. Always laying out the same buttons? Always using the same type scales? Good! If it looks good to you, you weren't going to do better on your own, and you were very likely to do worse.\n\nSee, I disagree. Having seen plenty of Claude generated websites and slide decks, to me it just screams \"no effort whatsoever\". AI sloppypasta for content, if you will.\n\nIf I can see within a few seconds that your website or slide was obviously AI generated, I will doubt its content, how much effort (if any) you've put into it, if it won't have hallucinations, and (especially for websites) if it's even real or a scam farm.\n\nI'm not saying every website has to be unique, but at least tell your prompt to use a font or colour scheme or something specific to you that will make it seem like you've put in some effort and make the result stand out from the slop.",
+    "depth": 1
+  },
+  {
+    "id": 48316549,
+    "by": "adamdb",
+    "text": "I'm going to play devil's advocate, who cares if it all looks generally the same? I grew up before everyone had dial-up, and I remember back then, when Web surfing on Netscape Navigator, all the websites also had a similar structure. Homogeneity in this context, to me, signals a design system that works best in the moment.",
+    "depth": 2
+  },
+  {
+    "id": 48318657,
+    "by": "ulrikrasmussen",
+    "text": "Uniqueness is a costly signal in a sea of information that is all calling for your attention. It signals that you as an author have spent real time on your web page to make it yours.",
+    "depth": 3
+  },
+  {
+    "id": 48316854,
+    "by": "embedding-shape",
+    "text": "> who cares if it all looks generally the same?\n\nMaybe here lies the crux; for some of us, the web and by extension the internet is about expression and individuality in a way, but all together all accessible by everyone. Everything looking the same instead looks conformist, and ultimately boring, which I guess is what many of us don't want day after day. We want new ideas, presented by the person/group who came up with it, in the way they would express it. The LLM kind of trashes the parts that add up to something interesting.",
+    "depth": 3
+  },
+  {
+    "id": 48317269,
+    "by": "tptacek",
+    "text": "If you're doing art, do art. Nobody's stopping you. If you're trying to solve a problem for other people, be legible. Legibility and individual expression are goals in tension.",
+    "depth": 4
+  },
+  {
+    "id": 48317573,
+    "by": "embedding-shape",
+    "text": "I'm not saying replace the entire thing with a flash animation or something drastically \"artsy\", just yours.",
+    "depth": 5
+  },
+  {
+    "id": 48317779,
+    "by": "tptacek",
+    "text": "Colors? Sure, within reason. Layouts? No, bad. Unless you really know what you\u2019re doing and why.",
+    "depth": 6
+  },
+  {
+    "id": 48322016,
+    "by": "sofixa",
+    "text": "> who cares if it all looks generally the same?\n\nIt's not just about being the same, in which case the worst is that it has less to stand out with.\n\nIt's about looking the same as the other AI generated slops out there, which is a strong signal that the content is probably AI slop too, which doesn't merit time being spent on it and trying to understand if it's slop or a human that just used AI generated UI.",
+    "depth": 3
+  },
+  {
+    "id": 48316517,
+    "by": "tptacek",
+    "text": "This has been a bugbear of mine (and many other people) since long before the advent of LLMs. It is not an intrinsically virtuous thing for a web design to be \"effortful\". Some of the most well-regarded UX systems in the industry are defined by rigorous sameness. If the baseline is good, departing from it is as likely to reduce legibility as increase it.",
+    "depth": 2
+  },
+  {
+    "id": 48319279,
+    "by": "refactor_master",
+    "text": "Before LLM you could sum up the web as the hamburger menu, bootstrap and materialize. Even Apple threw everything in a hamburger at some point.",
+    "depth": 2
+  },
+  {
+    "id": 48322022,
+    "by": "sofixa",
+    "text": "Yes, but not everyone used the same colour scheme with the exact same box designs, highlight visuals, etc. etc.",
+    "depth": 3
+  },
+  {
+    "id": 48322852,
+    "by": "tptacek",
+    "text": "Right, it totally wasn't the case that half the sites on the Internet were vanilla Bootstrap.",
+    "depth": 4
+  },
+  {
+    "id": 48316504,
+    "by": "metadat",
+    "text": "Don't forget about Contrastive Negation:\n\n> Contrastive negation is a rhetorical structure that denies a specific idea in the first half of a sentence and asserts an alternative in the second half.\n\n> It typically follows an \"It\u2019s not X, it\u2019s Y\" or \"not just X, but Y\" formula.\n\nWikipedia also has a great resource which covers many of the common LLM patterns:  [https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing] https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing",
+    "depth": 0
+  },
+  {
+    "id": 48321634,
+    "by": "ninjalanternshk",
+    "text": "As someone who\u2019s writing gets flagged as AI a lot, I appreciate the opening disclaimer section.\n\nAnd I especially appreciate the idea that these patterns aren\u2019t the problem. Don\u2019t just fix the patterns. The problem is they point to hastily or carelessly written content.",
+    "depth": 1
+  },
+  {
+    "id": 48317127,
+    "by": "furyofantares",
+    "text": "That's in the post",
+    "depth": 1
+  },
+  {
+    "id": 48320443,
+    "by": "amelius",
+    "text": "How long until LLMs are taught to avoid the patterns in that wiki page?",
+    "depth": 1
+  },
+  {
+    "id": 48315159,
+    "by": "n42",
+    "text": "No ___, no ____. Just _____\n\nor using \"honest\" to describe an approach.",
+    "depth": 0
+  },
+  {
+    "id": 48315891,
+    "by": "knollimar",
+    "text": "Honest, straight, genuine, actual, real are all words that paper over a weak claim to me.  Im thinking about a hook that injects a subagent fact checking in an \"are you sure\" style here because it's so bad.\n\nAlso the false not X it's Y is used in a similar way for faux distinctions like a sov cit claiming \"it's not driving, it's traveling in a car\"",
+    "depth": 1
+  },
+  {
+    "id": 48315766,
+    "by": "GrinningFool",
+    "text": "Jab, jab, thrust is how I think about that pattern. Or tap tap whack, if you prefer.  And it shows up for for positives too:\n\n\"Smooth.  Effortless.  A perfect fit for your needs\".\n\nIn any style of informal or persuasive writing this shows up , as if it has to drive the point in.\n\nI kind of wish we'd stop talking openly about what the tells are.  It's nice to be able to determine with fair accuracy - but it couldn't last forever.",
+    "depth": 1
+  },
+  {
+    "id": 48316049,
+    "by": "Barbing",
+    "text": "> I kind of wish we'd stop talking openly about what the tells are.\n\nLeast this way it\u2019s out in the open perhaps, since enough users have training enabled labs will naturally learn what annoys us.\n\nHad the same thought though",
+    "depth": 2
+  },
+  {
+    "id": 48318855,
+    "by": "left-struck",
+    "text": "Yeah, I think in this case, pointing out what\u2019s obviously llm is genuinely useful since it will lead to more diversity in websites and a better tool. I mean I don\u2019t usually care if a website is LLM generated as long as the copy is human written",
+    "depth": 3
+  },
+  {
+    "id": 48319823,
+    "by": "rmellow",
+    "text": "Ironically, your entire post can be read as such, almost perfectly!\n\nLabeling each sentence (J)ab and (T)hrust, and using colon \":\" to indicate arguments, one gets:\n\n```\n\nJ: J. J. T.\n\nJ: \"J. J. T\".\n\nT: T.\n\nT: J. J. T.\n\n```",
+    "depth": 2
+  },
+  {
+    "id": 48316969,
+    "by": "cootsnuck",
+    "text": "I call it \"I'm not like other girls\" writing.",
+    "depth": 2
+  },
+  {
+    "id": 48317591,
+    "by": "ares623",
+    "text": "Imagine a world where everyone talks like an Apple product page.",
+    "depth": 2
+  },
+  {
+    "id": 48318733,
+    "by": "userbinator",
+    "text": "I think that's been a tired marketing trope for many years before LLMs, and they just picked it up from the training data.",
+    "depth": 1
+  },
+  {
+    "id": 48318426,
+    "by": "overgard",
+    "text": "Don't forget the uncomfortable truth",
+    "depth": 1
+  },
+  {
+    "id": 48316145,
+    "by": "Hfuffzehn",
+    "text": "The interesting thing for me is that I do not feel like the writing of LLMs has improved very much lately stylistically.\nThey have reached a \"good\" level some time ago but the newer models havn't brought such improvements that you would prefer them to an expert human writer.\n\nWill be interesting if that holds in other areas when chasing super intelligence.",
+    "depth": 0
+  },
+  {
+    "id": 48316118,
+    "by": "kylemaxwell",
+    "text": "At this point, I want somebody's raw(ish) writing, with spelling errors and grammar mistakes and whatever, at least when it comes to most writing: blog posts, Slack messages, etc. LLMs are great for helping generate ideas, writing code, and maybe even cleaning up some writing, but doing the writing overall? Please don't. I want to hear what you have to say, not what the AI says, if it's something along those lines.",
+    "depth": 0
+  },
+  {
+    "id": 48317056,
+    "by": "OkayPhysicist",
+    "text": "The way I phrase it: If you can't be assed to write it, there is zero reason for anyone to want to read it.",
+    "depth": 1
+  },
+  {
+    "id": 48315598,
+    "by": "rimeice",
+    "text": "Scrolling down a LinkedIn feed is hilarious at the moment.\n\nMy favourite one today from today:\n\n\u201cThe tax isn't the problem. The mindset is.\u201d",
+    "depth": 0
+  },
+  {
+    "id": 48316068,
+    "by": "backwardsponcho",
+    "text": "The LinkedIn Kool-Aid predates the advent of LLMs though.",
+    "depth": 1
+  },
+  {
+    "id": 48317135,
+    "by": "LadyCailin",
+    "text": "I often think it\u2019s the opposite in fact, that the LLM smells come from LinkedIn text.",
+    "depth": 2
+  },
+  {
+    "id": 48317555,
+    "by": "singingtoday",
+    "text": "This tracks. Linked in, stack overflow, Reddit, even hn. All in the training data, I assume.",
+    "depth": 3
+  },
+  {
+    "id": 48317479,
+    "by": "chatmasta",
+    "text": "If you have Claude at work and are willing to point it to your emails, ask it to \u201cread all my sent emails and create a skill to draft an email in my voice.\u201d Even if you don\u2019t want to use the skill, it\u2019s fun to read the skill file it creates. It\u2019s a bizarre feeling, asking Claude \u201cwho am I?\u201d\n\nI haven\u2019t tried it with Slack messages because I\u2019m a little scared to read what it says, haha. But the same concept surely applies.\n\nThere are a few people at work who are aggressively using Claude to write Slack messages. It\u2019s easy for me to tell because one day they\u2019re writing barely coherent English in multiple messages, and the next they\u2019re sending perfectly coherent prose in a single message.",
+    "depth": 0
+  },
+  {
+    "id": 48318012,
+    "by": "shepherdjerred",
+    "text": "I've done this with Discord chat history to distill my friends' speech to review League of Legends games. For example:  [https://github.com/shepherdjerred/monorepo/blob/main/packages/birmel/src/persona/style-cards/aaron_style.json] https://github.com/shepherdjerred/monorepo/blob/main/package...\n\nIt actually works quite well",
+    "depth": 1
+  },
+  {
+    "id": 48320934,
+    "by": "xboxnolifes",
+    "text": "My friend also made a discord bot for this. It got too real so it was shut down.",
+    "depth": 2
+  },
+  {
+    "id": 48315281,
+    "by": "KronisLV",
+    "text": "> The \"JetBrains Mono\" font\n\nThought for sure we'd get a critique of Inter overuse. JetBrains Mono is a lovely font, though.",
+    "depth": 0
+  },
+  {
+    "id": 48321669,
+    "by": "ninjalanternshk",
+    "text": "I fear for falling into the trap some political parties get into \u2014 anything the other guy came up with is bad, by definition.\n\nIf JetBrains Mono suits your work you should use it, not avoid it specifically because AI often uses it.",
+    "depth": 1
+  },
+  {
+    "id": 48319791,
+    "by": "nottorp",
+    "text": "On a tangent, since it's called JetBrains Mono I guess it's JetBrains' IP?\n\nIs it even legal to use it in $RANDOM_WEBSITE?",
+    "depth": 1
+  },
+  {
+    "id": 48319875,
+    "by": "Udo_Schmitz",
+    "text": "[https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.txt] https://github.com/JetBrains/JetBrainsMono/blob/master/OFL.t...",
+    "depth": 2
+  },
+  {
+    "id": 48316088,
+    "by": "royal__",
+    "text": "Yeah this one kinda hurts.",
+    "depth": 1
+  },
+  {
+    "id": 48315508,
+    "by": "fortyseven",
+    "text": "It's my daily driver, so I kind of twitched a bit saying that list in here. I never noticed because I was using it anyway, I guess.",
+    "depth": 1
+  },
+  {
+    "id": 48317244,
+    "by": "minikomi",
+    "text": "just . \n    \n    And it changes everything.\n\n\nIs my favorite linkedin-ism. Wish LinkedIn had a regex block option.",
+    "depth": 0
+  },
+  {
+    "id": 48318823,
+    "by": "left-struck",
+    "text": "Just don\u2019t read anything on there, don\u2019t need regex for that.",
+    "depth": 1
+  },
+  {
+    "id": 48315654,
+    "by": "1970-01-01",
+    "text": "The LLM doesn't smell like authentic writing but it does a great job for fast and cheap words. We've gained something similar to fast food. Words made very cheap, very fast, easily digestible, but they have no emotion. In short stints it does have a place in the world.",
+    "depth": 0
+  },
+  {
+    "id": 48316867,
+    "by": "NicuCalcea",
+    "text": "To me, it's more like prison loaf [0] than fast food. It contains the basic information it was intended to convey, but in a very bland, irritating shape. At least fast food gives you a dopamine hit that I certainly don't get from AI writing.\n\n0:  [https://en.wikipedia.org/wiki/Nutraloaf] https://en.wikipedia.org/wiki/Nutraloaf",
+    "depth": 1
+  },
+  {
+    "id": 48316005,
+    "by": "thewebguyd",
+    "text": "> it does a great job for fast and cheap words\n\nLike corporate manager-type emails, of which I get AI generated ones frequently from company ownership. They think LLMs are the best thing since sliced bread.\n\nIt's taken corpo-speak to an entirely new level. On the plus side I no longer have to read them, and can just have AI reply on my behalf with more fast food.",
+    "depth": 1
+  },
+  {
+    "id": 48317568,
+    "by": "singingtoday",
+    "text": "Which is fine too me; I never read those emails anyways...",
+    "depth": 2
+  },
+  {
+    "id": 48315480,
+    "by": "docheinestages",
+    "text": "You are right to push back.",
+    "depth": 0
+  },
+  {
+    "id": 48318208,
+    "by": "david_shi",
+    "text": "I've found double and triple negations (\"Not this. Not that. Not that either.\") instead of just removing stuff to be one of the clearest tells.",
+    "depth": 0
+  },
+  {
+    "id": 48315282,
+    "by": "dvt",
+    "text": "It's kind of interesting how genuinely hard it is to get models to deviate from basically all of these tropes. You can straight up tell it \"I hate that card design, do something different, get creative!\" and it'll do something either (a) ugly as sin (clearly just essentially a random walk through parameters) or (b) some same-y derivation of that card.\n\nIn coding, I've noticed a few tropes as well: everything is a \"contract\" or an \"artifact\" (clearly trained on like three decades of Java lol), everything is constantly \"backwards-compatible\" or \"versioned\" (even if working on a brand new greenfield project), and a few others.",
+    "depth": 0
+  },
+  {
+    "id": 48315330,
+    "by": "jkdufair",
+    "text": "If claude says \"load bearing\" once more, I think I'll vomit.",
+    "depth": 1
+  },
+  {
+    "id": 48315609,
+    "by": "dieselgate",
+    "text": "That's a funny one. I don't use LLMs at all but \"load bearing\" is such a common/over-used internet joke for DIY building projects and stuff like \"load bearing caulk\". Have never heard it in a software sense really so am slightly perplexed",
+    "depth": 2
+  },
+  {
+    "id": 48316019,
+    "by": "thewebguyd",
+    "text": "> Have never heard it in a software sense really so am slightly perplexed\n\nIt's been used in an ops context for a long time, pre LLM even. Same with \"blast radius\" has been a cybersecurity term for as long as I can remember.",
+    "depth": 3
+  },
+  {
+    "id": 48315611,
+    "by": "dvt",
+    "text": "Hah, ChatGPT constantly says \"that's real\" or \"less about X, more about Y.\"",
+    "depth": 2
+  },
+  {
+    "id": 48318427,
+    "by": "topaz0",
+    "text": "You could stop using it first I suppose",
+    "depth": 2
+  },
+  {
+    "id": 48319797,
+    "by": "nottorp",
+    "text": "> I hate that card design, do something different, get creative!\n\nIt can't get creative, it can only generate based of what's a majority in it's training data.",
+    "depth": 1
+  },
+  {
+    "id": 48316334,
+    "by": "throwatdem12311",
+    "text": "I\u2019d rather they not deviate so I know right away that I can stop reading something because it\u2019s slop.",
+    "depth": 1
+  },
+  {
+    "id": 48315970,
+    "by": "nijave",
+    "text": "> :black_circle_for_record: Smoking gun.\n\n> \"belt and suspenders\"",
+    "depth": 0
+  },
+  {
+    "id": 48316594,
+    "by": "kivikakk",
+    "text": "Or \u201cbelt-and-braces\u201d. What the fuck.",
+    "depth": 1
+  },
+  {
+    "id": 48318785,
+    "by": "Scryptonite",
+    "text": "I personally wonder if the writing (and coding) smells are being leveraged for watermarking/steganography. Like, if it's quirky but intentional; they're biding the time, leaving breadcrumbs so they can more effectively sift new internet content, or perhaps tracing/de-anonymizing.\n\nI can also see how it is not necessarily the case, since all models seem plagued by having unique cliche patterns. We all seem to experience the writing smells from the same models. I see 'cleanly' a lot less from GPT 5.5 vs <5.4",
+    "depth": 0
+  },
+  {
+    "id": 48321667,
+    "by": "renyicircle",
+    "text": "> Humans trust symmetry because it feels like intelligence made visible\nI hope this one didn't make it into the author's math blog. I don't understand what this means. I don't \"trust\" symmetry, I never think of symmetry as having to do with \"intelligence\". How did it even come up with that.",
+    "depth": 0
+  },
+  {
+    "id": 48318177,
+    "by": "overgard",
+    "text": "It's funny, I've noticed my own writing has been getting a lot sloppier the past couple years just so that my writing doesn't get mistaken for AI. I actually used to use \"--\" pretty much all the time when I was young (granted I didn't go full em-dash, just the ascii version). It does make me kind of sad though, because writing in really short sentences (as one example) is actually a great way to make your writing easier to digest.",
+    "depth": 0
+  },
+  {
+    "id": 48317149,
+    "by": "offaxis",
+    "text": "To be honest, I often feel that AI writes better than I do. Since AI drafts drafts quickly, my work speed has increased by about 80% compared to before.",
+    "depth": 0
+  },
+  {
+    "id": 48320455,
+    "by": "eapriv",
+    "text": "> Late last year I started writing a math blog and decided to use LLMs to polish/enhance my writing.\n\nWhy would you do that in the first place? If you are just starting writing about math, I assume your goal would be to get better at it, and using LLMs is not how you get better at writing.",
+    "depth": 0
+  },
+  {
+    "id": 48321920,
+    "by": "Sammi",
+    "text": "This is a big fat \"it depends\". It depends on how you use the llm. You can use the llm to write your homework or you can use the llm as a teaching assistant to help you learn. Different people choose different paths.\n\nI grew up seeing this very relevant image on the wall of my grandparents:\n\n [https://en.wikipedia.org/wiki/Matthew_7:13#/media/File:Der_breite_und_der_schmale_Weg_2008.jpg] https://en.wikipedia.org/wiki/Matthew_7:13#/media/File:Der_b...\n\nLower quality version with The Eye of Providence not retouced out (the version I remember):\n\n [https://commons.wikimedia.org/wiki/File:Der_breite_und_der_schmale_Weg.jpg] https://commons.wikimedia.org/wiki/File:Der_breite_und_der_s...",
+    "depth": 1
+  },
+  {
+    "id": 48325182,
+    "by": "dropbox_miner",
+    "text": "> Why would you do that in the first place?\n\nfree will kiddo",
+    "depth": 1
+  },
+  {
+    "id": 48316454,
+    "by": "ray__",
+    "text": "I wonder if the tendency to write short punchy sentences stems from deliberate RL efforts to avoid repetitive, consistent writing? I seem to remember that a critique of early LLMs was that they would produce sentences whose construction was too homogeneous. Would be interesting to know the answer to this.",
+    "depth": 0
+  },
+  {
+    "id": 48322661,
+    "by": "paddycorr",
+    "text": "I've been letting typos and punctuation errors slide in my communication so that its clear that its a human that drafted the message. Almost typing faster to encourage them.",
+    "depth": 0
+  },
+  {
+    "id": 48316120,
+    "by": "newer_vienna",
+    "text": "I don't think I've met anyone who uses the word \"genuinely\" as much as Claude does.",
+    "depth": 0
+  },
+  {
+    "id": 48331333,
+    "by": "carefree-bob",
+    "text": "I get lots of \"load bearing\", \"seam\", and \"payoff\"",
+    "depth": 1
+  },
+  {
+    "id": 48317578,
+    "by": "singingtoday",
+    "text": "I genuinely agree. Unironically.",
+    "depth": 1
+  },
+  {
+    "id": 48317166,
+    "by": "SL61",
+    "text": "One I've noticed, and it might just be Claude, is putting \"The\" in front of titles and headers. Its documentation will have one section after another with headers like \"The Architecture\", \"The Caveats\", \"The Fixes\".",
+    "depth": 0
+  },
+  {
+    "id": 48315242,
+    "by": "danielodievich",
+    "text": "All of those are included in the bulk of the documents passing my work input these days. It is infuriating. Out of principle I maintain 100% me in all my writing but I don't know if it matters. Well maybe it does... an interviewee recently complimented me on the \"nicest and most human resume\" they saw recently.  That felt good",
+    "depth": 0
+  },
+  {
+    "id": 48315500,
+    "by": "exe34",
+    "text": "Do you send your resume to people before you interview them?",
+    "depth": 1
+  },
+  {
+    "id": 48316288,
+    "by": "danielodievich",
+    "text": "I meant interviewer. Sorry!",
+    "depth": 2
+  },
+  {
+    "id": 48317413,
+    "by": "rlorenzo",
+    "text": "For designs, try  [https://impeccable.style/slop/] https://impeccable.style/slop/ to detect AI slop patterns and improve your designs. I found it helpful for critiquing designs, developing a DESIGN.md guide, and iterating on UIs.",
+    "depth": 0
+  },
+  {
+    "id": 48319670,
+    "by": "dropbox_miner",
+    "text": "whoa this is really good",
+    "depth": 1
+  },
+  {
+    "id": 48320478,
+    "by": "rldjbpin",
+    "text": "these stochastic models just replicate what they see in training data. the reddit speak, american english stuff (some through osmosis in pop culture), etc. makes sense when stepping back a bit. but some of these do happen to be from the people based on whom we train everything, and it is interesting when they get in the crossfire from the content perfumer.\n\nalso, how come jetbrain mono has become one of these tells is insane to me!",
+    "depth": 0
+  },
+  {
+    "id": 48324724,
+    "by": "throwaway67743",
+    "text": "Shapes. It's always the give away that GPT has written it. It's obsessed with shapes and seams...",
+    "depth": 0
+  },
+  {
+    "id": 48315948,
+    "by": "antoineMoPa",
+    "text": "Abusing the words \"canonical\" and \"normalized\".",
+    "depth": 0
+  },
+  {
+    "id": 48324981,
+    "by": "looshch",
+    "text": "i used to always use proper em- and en-dashes because i care about typography, now i force myself to use a regular dash whenever even the assumption i used ai for what i wrote may impact me negatively",
+    "depth": 0
+  },
+  {
+    "id": 48334398,
+    "by": "OrangeMusic",
+    "text": "\u2019 instead of '",
+    "depth": 0
+  },
+  {
+    "id": 48316916,
+    "by": "thoughtpeddler",
+    "text": "Does anyone else use the 'smells' as a sort of 'game' to ensure you properly go through a given LLM output (of any kind, be it document, presentation, code, etc) and 'make it your own' by eliminating them? I have a high bar for sharing content so I always do a rigorous pass to eliminate the em dashes, the contrastive negations, the 'quietly', and any other extraneous verbosity, and find that it helps me just really thoroughly polish it up.",
+    "depth": 0
+  },
+  {
+    "id": 48316984,
+    "by": "perching_aix",
+    "text": "This reminds me to a video essay I saw a few months back. Guy explained that one of the metrics he evaluates game quality with, is how much the game manages to hide its game engine.\n\nI think it makes a lot of sense, it's essentially an inversion. Another related thing I recall is hearing game creators talk in terms of \"gimmicks\" and \"scenarios\". Anything that gives a structure, a framework to operate within, I'd say is always useful. This is much the same.",
+    "depth": 1
+  },
+  {
+    "id": 48318403,
+    "by": "topaz0",
+    "text": "New York is the Ljubljana of America",
+    "depth": 0
+  },
+  {
+    "id": 48316581,
+    "by": "ryanthedev",
+    "text": "I wrote a skill for this! But I\u2019m sure a lot of you have as well lol.\n\nFor those curious \n [https://github.com/ryanthedev/oberskills/blob/main/commands/write.md] https://github.com/ryanthedev/oberskills/blob/main/commands/...",
+    "depth": 0
+  },
+  {
+    "id": 48317167,
+    "by": "scottjg",
+    "text": "usually the LLM will match against the style in the context, even if the words ask it to do otherwise. since your skill sounds like an LLM wrote it, I would be surprised if it didn't make things worse.\n\nsorta like asking an LLM to get more creative with a visual design, that also never works.",
+    "depth": 1
+  },
+  {
+    "id": 48335690,
+    "by": "ryanthedev",
+    "text": "Your hand rolling skills? You know they created a thing called a skill creator\u2026",
+    "depth": 2
+  },
+  {
+    "id": 48316820,
+    "by": "NicuCalcea",
+    "text": "I'm not sure to what extent an AI-generated skill will help the AI sound less like an AI.",
+    "depth": 1
+  },
+  {
+    "id": 48335692,
+    "by": "ryanthedev",
+    "text": "You must be new to skill creation.",
+    "depth": 2
+  },
+  {
+    "id": 48318201,
+    "by": "qainsights",
+    "text": "Built DashBuster to bust --- :)  [https://chromewebstore.google.com/detail/dashbuster/pnfhimkhinoecknjhlggdbgoajcogfll?ref=producthunt] https://chromewebstore.google.com/detail/dashbuster/pnfhimkh...",
+    "depth": 0
+  },
+  {
+    "id": 48317701,
+    "by": "himata4113",
+    "text": "The color one is inaccurate since that's the tailwind color slate.",
+    "depth": 0
+  },
+  {
+    "id": 48318214,
+    "by": "aulin",
+    "text": "Leave my consecutive short sentences alone. And jetbrains mono.",
+    "depth": 0
+  },
+  {
+    "id": 48316097,
+    "by": "newer_vienna",
+    "text": "Thank you, these are all things I've noticed too.",
+    "depth": 0
+  },
+  {
+    "id": 48317111,
+    "by": "saaaaaam",
+    "text": "Claude is currently and suddenly obsessed with describing anything a little bit involved as being \u201cinside baseball\u201d.\n\nLast month it was quiet things being said out loud.\n\nWhen you use the tools all the time it\u2019s fun to watch these things pop up a week or so later as normies copy and paste the slop out on LinkedIn and their newsletters.",
+    "depth": 0
+  },
+  {
+    "id": 48315299,
+    "by": "mil22",
+    "text": "Those cards, so familiar! Exactly what Opus produced for me.\n\nDid Anthropic and/or OpenAI deliberately train their models to produce websites with a specific design language, or did these stylistic preferences emerge naturally as some kind of LLM-selected optimum?",
+    "depth": 0
+  },
+  {
+    "id": 48315977,
+    "by": "input_sh",
+    "text": "It's not the base model, it's the system prompt in dev tools.\n\nTo give an example I'm personally frequently annoyed by, Google's Antigravity will consistently use the word \"anthropomorphic\" while \"thinking\" and the end result will consistently have obnoxiously large border radius (kind of like Android's design language).\n\nCodex on the other hand likes to make websites with blue elements on a black background and likes to use emojis for icons for some reason, which is a terrible idea accessibility-wise.",
+    "depth": 1
+  },
+  {
+    "id": 48315917,
+    "by": "jochem9",
+    "text": "AI has no taste, so I suspect the labs just gave it a bunch of decent looking boilerplate as preferred style.\n\nWhen you bring your own ideas you can get AI to dev pretty nice looking non-generic stuff.",
+    "depth": 1
+  },
+  {
+    "id": 48315487,
+    "by": "manoDev",
+    "text": "Welcome to the future of fast-food software. Taste of deep frying and preservatives.",
+    "depth": 0
+  },
+  {
+    "id": 48319457,
+    "by": "zkmon",
+    "text": "I think we should stop discriminating or the pursuit of detecting LLM-generated content. This is not helping to stop the slop, it causing a harm - making the genuine human-generated content being branded as something bad. It's like branding words like \"segregation, black/white\" as racist. It is hijacking the common a language patterns and make them unusable in common human expression.",
+    "depth": 0
+  },
+  {
+    "id": 48319654,
+    "by": "dropbox_miner",
+    "text": "I support this. There is a mass psychological effect emerging out of this AI-content-witch-hunt where people are manufacturing \"flaws\" to beat the AI-slop allegations.\n\nTo list out a few personal examples:\n\n1. Several students I knew at GaTech in 2024 taking the algorithm class (which is notoriously hard) started submitting assignments with sub-optimal/brute-force algorithms cuz the TAs kept reporting them for academic misconduct on optimal solutions.\n\n2. I've started avoiding \"em-dashes\" in all my writing\n\n3. Junior engineers leaving \"typos\" in their code reviews or submitting code-reviews with absolutely 0 comments (LLMs love to leave verbose comments)\n\nGotta stop shaming people for using AI fr",
+    "depth": 1
+  },
+  {
+    "id": 48320436,
+    "by": "zkmon",
+    "text": "People are being forced to express in suboptimal ways, just to avoid being detected as slop. Some others are instructing AI to inject some typos or write grammatically incorrect sentences. The whole \"hey I detected that you have used AI\" is so childish. It is same as \"hey I knew that you used a car to get here, instead of walking\". Ok, I will drive my car at walking speed and maybe replace it wheels with legs.",
+    "depth": 2
+  },
+  {
+    "id": 48316197,
+    "by": "barrkel",
+    "text": "Quietly. Clean. Honest. Sharp take.",
+    "depth": 0
+  },
+  {
+    "id": 48315250,
+    "by": "dionian",
+    "text": "KPI cards,\npurple gradients",
+    "depth": 0
+  },
+  {
+    "id": 48317297,
+    "by": "tomrod",
+    "text": "Moar! I want all the smells!\n\n/endredditmode\n\nI actually love folks documenting this. I'm all for LLMs producing rough drafts. But rough drafts are, as a rule, slop.",
+    "depth": 0
+  },
+  {
+    "id": 48321573,
+    "by": "eieiyo",
+    "text": "That's quietly the most important part.",
+    "depth": 0
+  },
+  {
+    "id": 48316688,
+    "by": "reliablereason",
+    "text": "\"A is not B instead A is blah blah\" instead of just saying \"A\" is a very common pattern have seen in Claude.\n\nIt is strange to read as the topic A has often not been introduced and introducing it by saying what it is not makes very little sense to a new reader.",
+    "depth": 0
+  },
+  {
+    "id": 48320506,
+    "by": "debo_",
+    "text": "SmeLLMs",
+    "depth": 0
+  },
+  {
+    "id": 48318939,
+    "by": "akomtu",
+    "text": "That's an interesting difference between true intelligence and its LLM imitation. If you throw a pile of mediocre data at LLM, its level will drop to mediocrity, for it can't discern true from false, good from bad. However if you throw the same data at an expert human, he will ignore it, and maybe pick a few bits of novel knowledge, so overall his level will raise a bit.",
+    "depth": 0
+  },
+  {
+    "id": 48316310,
+    "by": "viccis",
+    "text": "One Python one I hate is that it adds crazy amounts of newlines for no real readability gains.\n\nInstead of this:\n\n  def add_three_ints(x: int, y: int, z: int) -> int:  \n      return x + y + z\n\nit will write:\n\n  def add_three_ints(  \n      x: int,  \n      y: int,  \n      x: int,  \n  ):  \n      return x + y + z\n\nWhile it's always preferable to do this when you get either long or complex function signatures, Opus 4.7 and GPT 5.5 do this everywhere. When you combine it with their penchant for writing helper functions for everything, you get a ton of vertical padding that messes up the readability imo because Python really relies on your eye seeing indents for scope.",
+    "depth": 0
+  },
+  {
+    "id": 48316429,
+    "by": "tomjakubowski",
+    "text": "The second way produces more billable output tokens. Worse, when you feed that code back into the LLM service, the extra whitespace counts as input tokens.",
+    "depth": 1
+  },
+  {
+    "id": 48316593,
+    "by": "torginus",
+    "text": "an LF is 1 character, just like a space. Its just looks bigger to our puny human brains.",
+    "depth": 2
+  },
+  {
+    "id": 48320808,
+    "by": "duckmysick",
+    "text": "A code formatter like Black can handle that. It's there to enforce a single code style no matter what the contributors use, whether they are human or AI.",
+    "depth": 1
+  },
+  {
+    "id": 48328981,
+    "by": "viccis",
+    "text": "Black's default, which I like, has it keep any vertical spacing of comma separated things like function arguments or list contents if they end with a trailing comma. I'm not sure there's an easy way to make a \"don't break up short function signatures\" rule, but would love to hear if anyone's done anything like that.",
+    "depth": 2
+  },
+  {
+    "id": 48316443,
+    "by": "fragmede",
+    "text": "That's for diffing gains later.\n\nIf you have to add arguments, when they're on one line like that, the diff is cleaner, so the reviewer has an easier time kf understanding what's going on. That is, if you still have a human reviewing code, that is.",
+    "depth": 1
+  },
+  {
+    "id": 48316125,
+    "by": "TacticalCoder",
+    "text": "So the year is 2026 and we cannot point a LLM at, say, this HN thread, and give it the instructions: \"I don't want to look like a dumbass, so don't make these obvious mistakes / don't use these obvious tells\"!?",
+    "depth": 0
+  },
+  {
+    "id": 48319829,
+    "by": "agos",
+    "text": "This for me is one of the greatest cognitive dissonance moments with LLMs: on one hand we have the proposition \u201cLLMs will do everything, take your job, automate anything that can be automated, produce novel research, lead humankind to a golden age\u201d and other hand we have \u201cno way to make it not sound like a guy who just learned this two sentences\u201d.",
+    "depth": 1
+  },
+  {
+    "id": 48317610,
+    "by": "singingtoday",
+    "text": "You caught me. I do basically this for Reddit threads to \"un ai\" some of my projects.\n\nKind of works.",
+    "depth": 1
+  },
+  {
+    "id": 48320309,
+    "by": "ramon156",
+    "text": "Can we have a Wikipedia entry for these? per model? I wouldn't mind using this page for that",
+    "depth": 0
+  },
+  {
+    "id": 48315554,
+    "by": "poszlem",
+    "text": "What I find amazing is how HARD it is to make the LLM produce a piece of text that does not sound like slop. I have had dozens of sessions where I tried to make it write like a human would, and yet it still uses those tired writing phrases. I don't understand why neither openai, nor anthropic are able to do anything to make it better, and in some cases it feels like we are actually going backwards.",
+    "depth": 0
+  },
+  {
+    "id": 48316508,
+    "by": "Noumenon72",
+    "text": "Alan Turing poisoned the context in ways we can't comprehend and all LLMs are bound by his dead hand.",
+    "depth": 1
+  },
+  {
+    "id": 48317615,
+    "by": "singingtoday",
+    "text": "wat",
+    "depth": 2
+  },
+  {
+    "id": 48328778,
+    "by": "Noumenon72",
+    "text": "Joking that Turing superhumanly foresaw AGI and created the Turing Test as a bar we must never cross, subtly introducing changes to the world's training data to ensure that models could never impersonate humans.",
+    "depth": 3
+  },
+  {
+    "id": 48318195,
+    "by": "david_shi",
+    "text": "\"That holds.\"",
+    "depth": 0
+  },
+  {
+    "id": 48316114,
+    "by": "speak_plainly",
+    "text": "I came here for the performative anti-AI intellectualism and was not disappointed.",
+    "depth": 0
+  }
+]
