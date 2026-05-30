@@ -32,6 +32,46 @@ tone, punctuation, document formatting, code comments, and visual/UI defaults.
 Drop `SKILL.md` into your agent's skills directory (or paste it into your system
 prompt / project rules), then instruct the agent to apply it before returning text.
 
+## Installation
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills/llm-smells
+git clone https://github.com/shitijkarsolia/llm-smells.git /tmp/llm-smells
+cp /tmp/llm-smells/SKILL.md ~/.claude/skills/llm-smells/
+```
+
+### OpenCode
+
+```bash
+mkdir -p ~/.config/opencode/skills/llm-smells
+cp SKILL.md ~/.config/opencode/skills/llm-smells/
+```
+
+> OpenCode also scans `~/.claude/skills/`, so a single copy into `~/.claude/skills/llm-smells/` works for both.
+
+### Any other agent
+
+Paste the contents of `SKILL.md` into your system prompt, project rules, or
+agent instructions.
+
+## Usage
+
+Once installed, invoke it before the agent returns text:
+
+```
+Apply the llm-smells skill, then write a launch announcement for our API.
+```
+
+Or to review an existing document:
+
+```
+Apply the llm-smells skill to review and report smells in README.md.
+```
+
+You can also direct the agent generically: "de-slop this text: [paste text]".
+
 ## Categories of smells covered
 
 - **Writing/prose** — contrastive negation ("it's not X, it's Y"), jab-jab-thrust
@@ -46,7 +86,18 @@ prompt / project rules), then instruct the agent to apply it before returning te
 See the [full directory](archived/LLM_SMELLS_DIRECTORY.md) for the complete list with
 examples, sources, and per-model tells.
 
+## Related projects
+
+- [blader/humanizer](https://github.com/blader/humanizer) — a prose-focused skill that
+  removes signs of AI writing, based on Wikipedia's "Signs of AI writing". Great
+  complement: it goes deep on prose with before/after examples and voice calibration,
+  while this repo covers a broader set of domains (code, web/UI, image, behavioral).
+
 ## Credit
 
 All observations are credited to the original blog author and HN commenters in the
 directory file. This repo organizes their work into a usable tool.
+
+## License
+
+[MIT](LICENSE)

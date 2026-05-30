@@ -249,3 +249,13 @@ If any answer is "no", return to step 3 of the workflow.
   "too smooth", treat it as a smell even if it's not listed here.
 - **Don't fake humanity.** The fix is plainer, more specific, more informative writing —
   never injected errors.
+
+---
+
+## Related skills
+
+- [blader/humanizer](https://github.com/blader/humanizer) — a prose-focused de-slop
+  skill based on Wikipedia's "Signs of AI writing", with before/after examples for each
+  pattern and voice calibration from a writing sample. For pure-prose work, run it
+  alongside this skill: humanizer goes deeper on prose patterns, while this skill adds
+  code, web/UI, image, and behavioral coverage plus the review/report mode.
